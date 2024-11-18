@@ -3,6 +3,7 @@ include('../../app/config.php');
 include('../../admin/layout/parte1_admin.php');
 
 include('../../app/controllers/rol_estudiantes/show_estudiante.php');
+
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -46,7 +47,7 @@ include('../../app/controllers/rol_estudiantes/show_estudiante.php');
                   <?php 
                   $contador_estudiante = 0;
                   foreach($estudiantes as $estudiante){
-                   //$codigo_estudiante = $estudiantes ['codigo']; 
+                   $codigo = $estudiante ['codigo']; 
                    $contador_estudiante = $contador_estudiante + 1;?>
                     
                     <tr>
@@ -60,8 +61,11 @@ include('../../app/controllers/rol_estudiantes/show_estudiante.php');
                       <td style="text-align: center;"><?=$estudiante['genero'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <button type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></button>
-                          <button type="button" class="btn btn-danger" title="Borrar" style="background-color: #D92B3A; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
+                          <a href="edit_estudiante.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
+                          <form action="<?=APP_URL;?>/app/controllers/rol_estudiantes/delete_estudiante.php" method="post">
+                            <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
+                            <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
+                          </form>                          
                         </div>
                       </td>
                     </tr>
