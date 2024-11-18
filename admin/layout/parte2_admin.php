@@ -9,7 +9,7 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
+  <footer class="main-footer ">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
     <strong>Diseñado y desarrollado por Xavier Del Rio</strong> 

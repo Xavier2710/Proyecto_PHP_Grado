@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -185,19 +185,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul class="nav nav-treeview"> 
               <li class="nav-item">
                 <a href="#" class="nav-link " style="color: #F2F2F2;">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-caret-right nav-icon"></i>
                   <p>Dimensiones</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link " style="color: #F2F2F2;">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-caret-right nav-icon"></i>
                   <p>Preguntas</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=APP_URL;?>/admin/roles/show_estudiantes.php" class="nav-link" style="color: #F2F2F2;">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-caret-right nav-icon"></i>
                   <p>Estudiantes</p>
                 </a>
               </li>
@@ -213,8 +213,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
-
-          <li class="nav-item">
+          
+          <li class="nav-item" style="border-color: #F2F2F2;"">
             <a href="#" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-journal-bookmark-fill"></i></i>
               <p>
@@ -222,6 +222,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+
+          
+          <li class="nav-item text-left user-panel mt-3 pb-3 mb-3 d-flex" style="border-color: #F2F2F2;">
+          </li>
+
+          <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link" style="color: #F2F2F2;">
+                    <i class="nav-icon fas"><i class="bi bi-people-fill"></i></i>
+                    <p>
+                      Usuarios
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item" style="border-color: #F2F2F2;">
+                      <a href="#" class="nav-link" style="color: #F2F2F2;">
+                        <i class="fas fa-caret-right nav-icon"></i>
+                        <p>Listado de Usuarios</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
 
           <br>
 
