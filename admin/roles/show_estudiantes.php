@@ -62,10 +62,30 @@ include('../../app/controllers/rol_estudiantes/show_estudiante.php');
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_estudiante.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
-                          <form action="<?=APP_URL;?>/app/controllers/rol_estudiantes/delete_estudiante.php" method="post">
+                          <form action="<?=APP_URL;?>/app/controllers/rol_estudiantes/delete_estudiante.php" onclick="preguntar(event)" method="post" id="miformulario<?=$id;?>">
                             <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
                             <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
-                          </form>                          
+                          </form>  
+                          <script>
+                              function preguntar(event){
+                                event.preventDefault();
+                                Swal.fire({
+                                  title: 'Eliminar Estudiante',
+                                  text: '¿Desea eliminar el estudiante seleccionado?',
+                                  icon: 'question',
+                                  showDenyButton: true,
+                                  confirmButtonText: 'Eliminar',
+                                  confirmButtonColor: '#D6B357',
+                                  denyButtonText: 'Cancelar',
+                                  denyButtonColor: '#D92B3A',
+                                }).then((result) => {
+                                  if(result.isConfirmed){
+                                    var form = $('#miformulario<?=$id;?>')
+                                    form.submit();
+                                  }
+                                });
+                              }
+                          </script>
                         </div>
                       </td>
                     </tr>
