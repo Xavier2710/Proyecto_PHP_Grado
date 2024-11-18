@@ -27,7 +27,7 @@ include('../../app/controllers/rol_estudiantes/show_estudiante.php');
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-              <table class="table table-bordered table-hover table-sm"> <!--Para marcar una fila(table-striped) -->
+              <table id="example1" class="table table-bordered table-hover table-sm"> <!--Para marcar una fila(table-striped) -->
                 
                 <thead>
                   <tr style="text-align: center;">
@@ -88,3 +88,48 @@ include('../../app/controllers/rol_estudiantes/show_estudiante.php');
   include('../../admin/layout/parte2_admin.php');
   include('../../layout/mensajes.php');
   ?>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "pageLength":4,
+      "language":{
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Estudiantes",
+        "infoEmpty": "Mostrando 0 a 0 de 0 Estudiantes",
+        "infoFiltered": "(Filtrado de _MAX_ total Estudiantes",
+        "infoPostEix": "",
+        "thousands": ",",
+        "LengthMenu": "Mostrar _MENU_ Estudiantes",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscador:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",    
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }   
+
+      },
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": [{text:'Copiar',extend:'copy'},
+                  {text:'Excel',extend:'excel',title: 'Reporte de Estudiantes',filename: 'Reporte de Estudiantes'}, 
+                  {text:'PDF',extend:'pdf',title: 'Reporte de Estudiantes',filename: 'Reporte de Estudiantes'}, 
+                  {text:'Imprimir',extend:'print',title: 'Reporte de Estudiantes'},
+                  {text:'Vista de Columnas',extend:'colvis'}           
+                ]
+                
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>

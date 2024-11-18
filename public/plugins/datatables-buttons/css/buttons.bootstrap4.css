@@ -294,10 +294,10 @@ div.dt-button-collection button.dt-btn-split-drop-button:focus {
   outline: none;
 }
 div.dt-button-collection button.dt-btn-split-drop-button:hover {
-  background-color: #e9ecef;
+  background-color: #F2F2F2;
 }
 div.dt-button-collection button.dt-btn-split-drop-button:active {
-  background-color: #007bff !important;
+  background-color: #D6B357 !important;
 }
 
 div.dt-button-background {
@@ -423,4 +423,28 @@ span.dt-button-spacer.bar:empty {
 div.dt-button-collection span.dt-button-spacer {
   padding-left: 1rem !important;
   text-align: left;
+}
+
+/* Cambiar color de fondo y texto de los botones principales */
+div.dt-buttons button.dt-button, 
+div.dt-button-collection .dt-button {
+  background-color: #D92B3A; /* Color de fondo del botón */
+  color: #F2F2F2; /* Color de texto del botón */
+  border: 1px solid #D6B357; /* Color del borde */
+}
+
+/* Cambiar color de fondo y texto en hover */
+div.dt-buttons button.dt-button:hover, 
+div.dt-button-collection .dt-button:hover {
+  background-color: #D92B3A; /* Color de fondo al pasar el cursor */
+  color: #F2F2F2; /* Color del texto al pasar el cursor */
+  border: 1px solid #D6B357; /* Color del borde al pasar el cursor */
+}
+
+/* Cambiar color de fondo y texto al hacer clic */
+div.dt-buttons button.dt-button:active, 
+div.dt-button-collection .dt-button:active {
+  background-color: #D92B3A; /* Color de fondo al hacer clic */
+  color: #F2F2F2; /* Color de texto al hacer clic */
+  border: 1px solid #D6B357; /* Color del borde al hacer clic */
 }
