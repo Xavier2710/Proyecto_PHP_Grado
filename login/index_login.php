@@ -1,4 +1,5 @@
 <?php 
+session_start(); // Moved session_start to the top
 include('../app/config.php');
 ?>
 
@@ -18,60 +19,127 @@ include('../app/config.php');
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=APP_URL;?>/public/dist/css/adminlte.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-<body class="hold-transition login-page" style="background-image: url('../public/dist/img/fondo2.jpg'); background-size: cover;background-position: center;">
-<div class="login-box">
-  <div class="login-logo">
-    <h3 style="color: #F2F2F2;"><strong><?=APP_NAME;?></strong></h3>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card shadow rounded-lg" style="border: none; max-width: 400px; margin: auto;">
-  <div class="card-body login-card-body text-center" style="background-color: #f7f9fc; border-radius: 15px;">
-    <h3 class="mb-4" style="color: #2C3E50;"><strong>Login</strong></h3>
-    <p class="login-box-msg" style="color: #34495E; font-size: 1.1rem;">Ingrese sus credenciales</p>
-    <hr>
-    <form action="controller_login.php" method="post">
-      <div class="input-group mb-3">
-        <input type="email" name="correo" class="form-control" placeholder="Email" style="border-radius: 10px 0 0 10px;">
-        <div class="input-group-append">
-          <div class="input-group-text" style="background-color: #e9ecef; border-radius: 0 10px 10px 0;">
-            <span class="fas fa-envelope"></span>
-          </div>
-        </div>
-      </div>
-      <div class="input-group mb-3">
-        <input type="password" name="clave" class="form-control" placeholder="Password" style="border-radius: 10px 0 0 10px;">
-        <div class="input-group-append">
-          <div class="input-group-text" style="background-color: #e9ecef; border-radius: 0 10px 10px 0;">
-            <span class="fas fa-lock"></span>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <button class="btn btn-primary btn-block" type="submit" style="background-color: #D92B3A;border-radius: 20px; font-weight: bold;">Ingresar</button>
-    </form>
-
-    <?php 
-    session_start();
-    if(isset($_SESSION['mensaje'])){
-      $mensaje = $_SESSION['mensaje'];
-    ?>
-      <script>
-          Swal.fire({
-              icon: "error",
-              title: "Acceso Denegado",
-              text: "<?=$mensaje;?>"
-          });
-      </script>
-    <?php
-      session_destroy();
+  <style>
+    body {
+      background-image: url('../public/dist/img/fondo2.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    ?>
+
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Cuadro de bienvenida */
+    .welcome-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 700px; 
+      margin: 5%;
+    }
+
+    .welcome-box h2 {
+      color: #2C3E50;
+      margin-bottom: 20px;
+    }
+
+    .welcome-box p {
+      color: #34495E;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .login-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .login-card-body {
+      background-color: #f7f9fc;
+      border-radius: 15px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Cuadro de bienvenida -->
+  <div class="welcome-box">
+    <h2><strong>Bienvenido a <?=APP_NAME;?></strong></h2>
+    <p><em>Dashboard para visualizar el impacto de la formación médica en atención primaria y salud pública mediante la metodología de aprendizaje basado en problemas</em></p>
+  </div>
+
+  <!-- Cuadro de login -->
+  <div class="login-box">
+    <div class="card shadow rounded-lg" style="border: none;">
+      <div class="card-body login-card-body text-center">
+        <h3 class="mb-4" style="color: #2C3E50;"><strong>Login</strong></h3>
+        <p class="login-box-msg" style="color: #34495E; font-size: 1.1rem;">Ingrese sus credenciales</p>
+        <hr>
+        <form action="controller_login.php" method="post">
+          <div class="input-group mb-3">
+            <input type="email" name="correo" class="form-control" placeholder="Email" style="border-radius: 10px 0 0 10px;">
+            <div class="input-group-append">
+              <div class="input-group-text" style="background-color: #e9ecef; border-radius: 0 10px 10px 0;">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" name="clave" class="form-control" placeholder="Password" style="border-radius: 10px 0 0 10px;">
+            <div class="input-group-append">
+              <div class="input-group-text" style="background-color: #e9ecef; border-radius: 0 10px 10px 0;">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <button class="btn btn-primary btn-block" type="submit" style="background-color: #D92B3A;border-radius: 20px; font-weight: bold;">Ingresar</button>
+        </form>
+
+        <?php 
+        if(isset($_SESSION['mensaje'])){
+          $mensaje = $_SESSION['mensaje'];
+        ?>
+          <script>
+              Swal.fire({
+                  icon: "error",
+                  title: "Acceso Denegado",
+                  text: "<?=$mensaje;?>",
+                  confirmButtonColor: "#D6B357"
+              });
+          </script>
+        <?php
+          session_destroy();
+        }
+        ?>
+      </div>
+    </div>
   </div>
 </div>
-
-</div>
-<!-- /.login-box -->
 
 <!-- jQuery -->
 <script src="<?=APP_URL;?>/public/plugins/jquery/jquery.min.js"></script>

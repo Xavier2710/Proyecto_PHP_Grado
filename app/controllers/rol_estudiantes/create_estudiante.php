@@ -14,7 +14,7 @@ $txt_genero = mb_strtoupper($txt_genero);
 
 // Para validar los campos como vacios
 
-if(($txt_codigo == "") & ($txt_nombre == "") & ($txt_correo == "")){
+if(($txt_codigo == "") || ($txt_nombre == "") || ($txt_correo == "")){
     session_start();
     $_SESSION['mensaje'] = "Debe diligenciar todos los campos";
     $_SESSION['icono'] = "info";

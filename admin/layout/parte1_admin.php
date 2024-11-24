@@ -8,8 +8,7 @@ if (isset($_SESSION['sesion_correo'])) {
 
   $datos_sesion_usuarios = $query_sesion->fetchAll(PDO::FETCH_ASSOC);
   foreach ($datos_sesion_usuarios as $datos_sesion_usuario) {
-    $nombre_sesion_usuario = $datos_sesion_usuario['nombre'];
-    $apellido_sesion_usuario = $datos_sesion_usuario['apellido'];
+    $nombre_sesion_usuario = $datos_sesion_usuario['nombreCompleto'];
   }
 }else{
   //echo 'El usuario no paso por el login';
@@ -46,6 +45,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+  <script>
+    const logoutTime = 900000; //se cerrala la sesion en 15 min
+    const logoutTime1 = 30000; // 30 segundos para cancelar el cierre de sesion
+
+    let autoLogoutTimeout;
+
+    function autoLogout() {
+        let timerInterval;
+        Swal.fire({
+            title: "Cierre Automático",
+            html: "Se cerrará la sesión en <b>30</b> segundos.<br><br>" +
+                  "<button id='continue-session' class='btn btn-danger'>Continuar Sesión</button>",
+            timer: logoutTime1,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+                const timerDisplay = Swal.getHtmlContainer().querySelector("b");
+                let timeLeft = logoutTime1 / 1000;
+                timerInterval = setInterval(() => {
+                    timeLeft -= 1;
+                    timerDisplay.textContent = timeLeft;
+                }, 1000);
+
+                const continueButton = Swal.getHtmlContainer().querySelector("#continue-session");
+                continueButton.addEventListener("click", () => {
+                    clearInterval(timerInterval);
+                    Swal.close();
+                    resetAutoLogout();
+                });
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+                window.location.href = "<?=APP_URL;?>/login/logout.php";
+            }
+        });
+    }
+
+    function resetAutoLogout() {
+        clearTimeout(autoLogoutTimeout);
+        autoLogoutTimeout = setTimeout(autoLogout, logoutTime);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        resetAutoLogout();
+    });
+</script>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -58,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?=APP_URL;?>/admin/index_admin.php" class="nav-link"><?=APP_NAME;?></a>
+        <a href="<?=APP_URL;?>/admin/index_admin.php" class="nav-link"><strong><?=APP_NAME;?></strong></a>
       </li>
     </ul>
     
@@ -92,7 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <span class="badge badge-warning navbar-badge">2</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-header">15 Notifications</span>
@@ -133,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #D5B256;">
     <!-- Brand Logo -->
     <a href="<?=APP_URL;?>/admin/index_admin.php" class="brand-link">
-      <img src="<?=APP_URL;?>/public/dist/img/medicina2.png" alt="Logo_Medicina" class="brand-image elevation-3" style="opacity: .9">
+      <img src="<?=APP_URL;?>/public/dist/img/medicina2.png" alt="Logo_Medicina" class="brand-image elevation-3" style="opacity: .9; border-radius:5px">
       <span class="brand-text font-weight-light"><strong>Dashboard ABP</strong></span>
     </a>
 
@@ -149,7 +198,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <br>
         <div class="info">
           <a href="#" style="color: #F2F2F2;" 
-          class="d-block"><?=$nombre_sesion_usuario;?> <?=$apellido_sesion_usuario;?></a>
+          class="d-block"><?=$nombre_sesion_usuario;?></a>
         </div>
       </div>
 
@@ -178,29 +227,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link " style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-tools"></i></i>
               <p>
-                Parámetros
-                <i class="right fas fa-angle-left"></i>
+                Configuración
+                <i class="right fas fa-angle-left" style="color: #D92B3A;"></i>
               </p>
             </a>
             <ul class="nav nav-treeview"> 
               <li class="nav-item">
-                <a href="#" class="nav-link " style="color: #F2F2F2;">
-                  <i class="fas fa-caret-right nav-icon"></i>
+                <a href="<?=APP_URL;?>/admin/roles/asignaturas/show_asignaturas.php" class="nav-link " style="color: #F2F2F2;">
+                  <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
+                  <p>Asignaturas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/roles/dimensiones/show_dimensiones.php" class="nav-link " style="color: #F2F2F2;">
+                  <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Dimensiones</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link " style="color: #F2F2F2;">
-                  <i class="fas fa-caret-right nav-icon"></i>
-                  <p>Preguntas</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/roles/show_estudiantes.php" class="nav-link" style="color: #F2F2F2;">
-                  <i class="fas fa-caret-right nav-icon"></i>
+                <a href="<?=APP_URL;?>/admin/roles/estudiantes/show_estudiantes.php" class="nav-link" style="color: #F2F2F2;">
+                  <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Estudiantes</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/roles/grupos/show_grupos.php" class="nav-link " style="color: #F2F2F2;">
+                  <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
+                  <p>Grupos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/roles/preguntas/show_preguntas.php" class="nav-link " style="color: #F2F2F2;">
+                  <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
+                  <p>Preguntas</p>
+                </a>
+              </li>              
             </ul>
           </li>
 
@@ -232,22 +293,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <i class="nav-icon fas"><i class="bi bi-people-fill"></i></i>
                     <p>
                       Usuarios
-                      <i class="right fas fa-angle-left"></i>
+                      <i class="right fas fa-angle-left" style="color: #D92B3A;"></i>
                     </p>
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item" style="border-color: #F2F2F2;">
                       <a href="#" class="nav-link" style="color: #F2F2F2;">
-                        <i class="fas fa-caret-right nav-icon"></i>
-                        <p>Listado de Usuarios</p>
+                        <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
+                        <p>Administradores</p>
+                      </a>
+                      <a href="#" class="nav-link" style="color: #F2F2F2;">
+                        <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
+                        <p>Docentes</p>
                       </a>
                     </li>
                   </ul>
                 </li>
-
           <br>
-
-
           <li class="nav-item text-left user-panel mt-3 pb-3 mb-3 d-flex" style="border-color: #F2F2F2;">
             <a href="<?=APP_URL;?>/login/logout.php" class="nav-link" style="color: #F2F2F2;background-color: #D92B3A; border-radius: 15px">
               <i class="nav-icon fas"><i class="bi bi-box-arrow-left"></i></i>
@@ -260,6 +322,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         </ul>
       </nav>
+      
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

@@ -29,7 +29,7 @@ include('../../app/controllers/rol_estudiantes/datos_estudiantes.php');
                 <form action="<?=APP_URL;?>/app/controllers/rol_estudiantes/update_estudiante.php" method="post">
                     <div class="form-row">
                         <div class="col">
-                        <input type="text" readonly name="txt_codigo" class="form-control" value="Codigo: <?=$codigo;?>" placeholder="Codigo">
+                        <input type="text" readonly name="txt_codigo" class="form-control" value="<?=$codigo;?>" placeholder="Codigo">
                         </div>
                         <div class="col-md-5">
                             <input type="text" name="txt_nombre" class="form-control" value="<?=$nombre_estudiante;?>" placeholder="Nombre Completo">

@@ -1,6 +1,6 @@
 <?php 
-include('../../app/config.php');
-include('../../admin/layout/parte1_admin.php');
+include('../../../app/config.php');
+include('../../../admin/layout/parte1_admin.php');
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -78,6 +78,6 @@ include('../../admin/layout/parte1_admin.php');
   <!-- /.content-wrapper -->
 
   <?php 
-  include('../../admin/layout/parte2_admin.php');
-  include('../../layout/mensajes.php');
+  include('../../../admin/layout/parte2_admin.php');
+  include('../../../layout/mensajes.php');
   ?>
