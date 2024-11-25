@@ -36,10 +36,10 @@ include('../app/config.php');
       gap: 20px;
       width: 90%;
       max-width: 1200px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     }
 
     /* Cuadro de bienvenida */
@@ -52,7 +52,7 @@ include('../app/config.php');
       align-items: center;
       text-align: center;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(100, 100, 100, 0.8);
       max-width: 700px; 
       margin: 5%;
     }
@@ -80,7 +80,8 @@ include('../app/config.php');
       border-radius: 15px;
       padding: 20px;
       width: 100%;
-      max-width: 400px;
+      max-width: 400px;      
+      box-shadow: 0 4px 10px rgba(100, 100, 100, 0.8);
     }
   </style>
 </head>

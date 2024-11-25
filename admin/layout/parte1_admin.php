@@ -245,9 +245,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/roles/estudiantes/show_estudiantes.php" class="nav-link" style="color: #F2F2F2;">
+                <a href="<?=APP_URL;?>/admin/roles/usuarios/show_usuarios.php" class="nav-link" style="color: #F2F2F2;">
                   <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
-                  <p>Estudiantes</p>
+                  <p>Usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -305,6 +305,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="nav-link" style="color: #F2F2F2;">
                         <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                         <p>Docentes</p>
+                      </a>
+                      <a href="#" class="nav-link" style="color: #F2F2F2;">
+                        <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
+                        <p>Estudiantes</p>
                       </a>
                     </li>
                   </ul>

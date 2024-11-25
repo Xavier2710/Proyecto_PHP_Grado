@@ -2,7 +2,7 @@
 include('../../../app/config.php');
 include('../../../admin/layout/parte1_admin.php');
 
-include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
+include('../../../app/controllers/rol_usuarios/show_usuario.php');
 
 ?>
   <!-- Content Wrapper. Contains page content -->
@@ -11,7 +11,7 @@ include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Lista de estudiantes</h3>            
+            <h3>Lista de usuarios</h3>            
         </div>
         <br>        
         <div class="row">
@@ -19,10 +19,10 @@ include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
           <div class="col-md-12">
             <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
-                <h3 class="card-title">Estudiantes Registrados</h3>
+                <h3 class="card-title">Usuarios Registrados</h3>
 
                 <div class="card-tools">
-                  <a href="create_estudiante.php" class="btn btn-outline-danger">Crear Estudiante <i class="bi bi-person-add"></i></a>
+                  <a href="create_usuario.php" class="btn btn-outline-danger">Crear Usuario <i class="bi bi-person-add"></i></a>
                 </div>
                 <!-- /.card-tools -->
               </div>
@@ -35,34 +35,30 @@ include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
                     <th>Item</th>
                     <th>Codigo</th>
                     <th>Nombre Completo</th>
-                    <th>Fecha de Nacimiento</th>
                     <th>Correo</th>
-                    <th>Programa</th>
-                    <th>Procedencia Escolar</th>
-                    <th>Genero</th>
-                    <th>Accion</th>
+                    <th>Clave</th>
+                    <th>Rol</th>
+                    <th>Acción</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                  $contador_estudiante = 0;
-                  foreach($estudiantes as $estudiante){
-                   $codigo = $estudiante ['codigo']; 
-                   $contador_estudiante = $contador_estudiante + 1;?>
+                  $contador_usuario = 0;
+                  foreach($usuarios as $usuario){
+                   $codigo = $usuario ['idusuario']; 
+                   $contador_usuario = $contador_usuario + 1;?>
                     
                     <tr>
-                      <td  style="text-align: center;"><?=$contador_estudiante;?></td>
-                      <td style="text-align: center;"><?=$estudiante['codigo'];?></td>
-                      <td><?=$estudiante['nombreCompleto'];?></td>
-                      <td style="text-align: center;"><?=$estudiante['fechaN'];?></td>
-                      <td><?=$estudiante['correo'];?></td>
-                      <td style="text-align: center;"><?=$estudiante['Programa_idPrograma'];?></td>
-                      <td><?=$estudiante['procedenciaEscolar'];?></td>
-                      <td style="text-align: center;"><?=$estudiante['genero'];?></td>
+                      <td  style="text-align: center;"><?=$contador_usuario;?></td>
+                      <td style="text-align: center;"><?=$usuario['idusuario'];?></td>
+                      <td><?=$usuario['nombreCompleto'];?></td>
+                      <td><?=$usuario['correo'];?></td>
+                      <td><?= substr($usuario['clave'], 0, 2) . str_repeat('*', strlen($usuario['clave']) - 2); ?></td>
+                      <td><?=$usuario['rol'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <a href="edit_estudiante.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
-                          <form action="<?=APP_URL;?>/app/controllers/rol_estudiantes/delete_estudiante.php" onclick="preguntar(event)" method="post" id="miformulario<?=$id;?>">
+                          <a href="edit_usuario.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
+                          <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/delete_usuario.php" onclick="preguntar(event)" method="post" id="miformulario<?=$id;?>">
                             <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
                             <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
                           </form>  
@@ -70,8 +66,8 @@ include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
                               function preguntar(event){
                                 event.preventDefault();
                                 Swal.fire({
-                                  title: 'Eliminar Estudiante',
-                                  text: '¿Desea eliminar el estudiante seleccionado?',
+                                  title: 'Eliminar Usuario',
+                                  text: '¿Desea eliminar el usuario seleccionado?',
                                   icon: 'question',
                                   showDenyButton: true,
                                   confirmButtonText: 'Eliminar',
@@ -88,8 +84,7 @@ include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
                           </script>
                         </div>
                       </td>
-                    </tr>
-  
+                    </tr>  
                   <?php
                   }
                   ?>                
@@ -119,12 +114,12 @@ include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
       "pageLength":4,
       "language":{
         "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Estudiantes",
-        "infoEmpty": "Mostrando 0 a 0 de 0 Estudiantes",
-        "infoFiltered": "(Filtrado de _MAX_ total Estudiantes",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
+        "infoEmpty": "Mostrando 0 a 0 de 0 Usuarios",
+        "infoFiltered": "(Filtrado de _MAX_ total Usuarios",
         "infoPostEix": "",
         "thousands": ",",
-        "LengthMenu": "Mostrar _MENU_ Estudiantes",
+        "LengthMenu": "Mostrar _MENU_ Usuarios",
         "loadingRecords": "Cargando...",
         "processing": "Procesando...",
         "search": "Buscador:",
@@ -139,9 +134,9 @@ include('../../../app/controllers/rol_estudiantes/show_estudiante.php');
       },
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": [{text:'Copiar',extend:'copy',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'}},
-                  {text:'Excel',extend:'excel',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Asignaturas',filename: 'Reporte de Asignaturas'}, 
-                  {text:'PDF',extend:'pdf',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Asignaturas',filename: 'Reporte de Asignaturas'}, 
-                  {text:'Imprimir',extend:'print',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Asignaturas'},
+                  {text:'Excel',extend:'excel',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Usuarios',filename: 'Reporte de Usuarios'}, 
+                  {text:'PDF',extend:'pdf',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Usuarios',filename: 'Reporte de Usuarios'}, 
+                  {text:'Imprimir',extend:'print',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Usuarios'},
                   {text:'Vista de Columnas',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},extend:'colvis'}           
                 ]
                 

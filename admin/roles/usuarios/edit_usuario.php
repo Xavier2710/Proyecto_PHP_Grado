@@ -3,9 +3,9 @@
 $codigo = $_GET['id'];
 
 
-include('../../app/config.php');
-include('../../admin/layout/parte1_admin.php');
-include('../../app/controllers/rol_estudiantes/datos_estudiantes.php');
+include('../../../app/config.php');
+include('../../../admin/layout/parte1_admin.php');
+include('../../../app/controllers/rol_usuarios/datos_usuario.php');
 
 ?>
   <!-- Content Wrapper. Contains page content -->
@@ -14,7 +14,7 @@ include('../../app/controllers/rol_estudiantes/datos_estudiantes.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Actualizar datos del estudiante: <?=$nombre_estudiante;?></h3>            
+            <h3>Actualizar datos del usuario: <strong><?=$nombre_usuario;?></strong></h3>            
         </div>
         <br>        
         <div class="row">
@@ -26,38 +26,33 @@ include('../../app/controllers/rol_estudiantes/datos_estudiantes.php');
               </div>
               <div class="card-body">
               
-                <form action="<?=APP_URL;?>/app/controllers/rol_estudiantes/update_estudiante.php" method="post">
+                <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/update_usuario.php" method="post">
                     <div class="form-row">
-                        <div class="col">
+                        <div class="col-md-3">
                         <input type="text" readonly name="txt_codigo" class="form-control" value="<?=$codigo;?>" placeholder="Codigo">
                         </div>
-                        <div class="col-md-5">
-                            <input type="text" name="txt_nombre" class="form-control" value="<?=$nombre_estudiante;?>" placeholder="Nombre Completo">
-                        </div>
-                        <div class="col">
-                            <input type="date" name="txt_fecha" class="form-control" value="<?=$fecha_estudiante;?>" placeholder="Fecha de Nacimiento" title="Fecha de Nacimiento">
+                        <div class="col-md-9">
+                            <input type="text" name="txt_nombre" class="form-control" value="<?=$nombre_usuario;?>" placeholder="Nombre Completo">
                         </div>
                     </div>
                     <hr>
                     <div class="form-row">                        
                         <div class="col">
-                        <input type="email" name="txt_correo" class="form-control" value="<?=$correo_estudiante;?>" placeholder="Correo">
+                        <input type="email" name="txt_correo" class="form-control" value="<?=$correo_usuario;?>" placeholder="Correo">
                         </div>
                         <div class="col">
-                        <input type="text" name="txt_programa" class="form-control" value="<?=$programa_estudiante;?>" placeholder="Programa de formación">
+                        <input type="password" name="txt_clave" class="form-control" value="<?=$clave_usuario;?>" placeholder="Contraseña">
                         </div>
                     </div>
                     <hr>
                     <div class="form-row">                        
                         <div class="col-md-9">
-                            <select class="custom-select" name="txt_escolar">
-                                <option value="1"><?=$escolar_estudiante;?></option>
-                                <option value="Pública">Pública</option>
-                                <option value="Prívada">Prívada</option>
+                            <select class="custom-select" name="txt_rol">
+                                <option value="<?=$clave_usuario;?>" disabled selected>Seleccione rol de usuario...</option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Docente">Docente</option>
+                                <option value="Estudiante">Estudiante</option>
                             </select>
-                        </div>
-                        <div class="col">
-                        <input type="text" name="txt_genero" class="form-control" value="<?=$genero_estudiante;?>" placeholder="Genero">
                         </div>
                     </div>
                     <hr>
@@ -65,7 +60,7 @@ include('../../app/controllers/rol_estudiantes/datos_estudiantes.php');
                     <div class="row">
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-primary" style="background-color: #D6B357; border-color: #D6B357; color: #F2F2F2;">Actualizar</button>
-                            <a href="show_estudiantes.php" class="btn btn-danger" style="color: #F2F2F2;">Cancelar</a>
+                            <a href="show_usuarios.php" class="btn btn-danger" style="color: #F2F2F2;">Cancelar</a>
                         </div>
                     </div>                    
                 </form>
@@ -84,6 +79,6 @@ include('../../app/controllers/rol_estudiantes/datos_estudiantes.php');
   <!-- /.content-wrapper -->
 
   <?php 
-  include('../../admin/layout/parte2_admin.php');
-  include('../../layout/mensajes.php');
+  include('../../../admin/layout/parte2_admin.php');
+  include('../../../layout/mensajes.php');
   ?>
