@@ -16,16 +16,32 @@ $contador = 0;
 
 foreach($usuarios as $usuario) {
     $clave_tabla = $usuario['clave'];
+    $rol_tabla = $usuario['rol'];
+    $nombre_tabla = $usuario['nombreCompleto'];
     $contador = $contador + 1;
 }
 
-if(($contador > 0) && ($clave_tabla == $clave)) {
+if(($contador > 0) && ($clave_tabla == $clave) && ($rol_tabla == "Administrador")){
     echo "Los datos son correctos";
     session_start();
-    $_SESSION['mensaje'] = "Bienvenido al Sistema";
+    $_SESSION['mensaje'] = "Bienvenido al Sistema Sr@ ".$nombre_tabla." como Administrador";
     $_SESSION['icono'] = "success";
     $_SESSION['sesion_correo'] = $correo;
     header('Location:'.APP_URL."/admin/index_admin.php");
+}elseif(($contador > 0) && ($clave_tabla == $clave) && ($rol_tabla == "Docente")){
+    echo "Los datos son correctos";
+    session_start();
+    $_SESSION['mensaje'] = "Bienvenido al Sistema Sr@ ".$nombre_tabla." como Docente";
+    $_SESSION['icono'] = "success";
+    $_SESSION['sesion_correo'] = $correo;
+    header('Location:'.APP_URL."/layout/docente/index_docente.php");
+}elseif(($contador > 0) && ($clave_tabla == $clave) && ($rol_tabla == "Estudiante")){
+    echo "Los datos son correctos";
+    session_start();
+    $_SESSION['mensaje'] = "Bienvenido al Sistema Sr@ ".$nombre_tabla." como Estudiante";
+    $_SESSION['icono'] = "success";
+    $_SESSION['sesion_correo'] = $correo;
+    header('Location:'.APP_URL."/layout/estudiante/index_estudiante.php");
 }else{
     echo "los datos son incorrectos";
     session_start();

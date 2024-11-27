@@ -32,18 +32,18 @@ if(($txt_codigo == "") || ($txt_nombre == "") || ($txt_correo == "") || ($txt_cl
             session_start();
             $_SESSION['mensaje'] = "Usuario registrado con éxito";
             $_SESSION['icono'] = "success";
-            header('Location:'.APP_URL."/admin/roles/usuarios/create_usuario.php");
+            header('Location:'.APP_URL."/admin/roles/usuarios/show_usuarios.php");
         }else{
             session_start();
             $_SESSION['mensaje'] = "No se pudo registrar el usuario";
             $_SESSION['icono'] = "error";
-            header('Location:'.APP_URL."/admin/roles/usuarios/create_usuario.php");
+            header('Location:'.APP_URL."/admin/roles/usuarios/show_usuarios.php");
         }
     }catch (Exception $exception){
         session_start();
         $_SESSION['mensaje'] = "Este Codigo ya esta registrado en el sistema";
         $_SESSION['icono'] = "error";
-        header('Location:'.APP_URL."/admin/roles/usuarios/create_usuario.php");
+        header('Location:'.APP_URL."/admin/roles/usuarios/show_usuarios.php");
     }
 }
 ?>

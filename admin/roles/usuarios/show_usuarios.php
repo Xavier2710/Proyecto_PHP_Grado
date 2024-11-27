@@ -58,12 +58,12 @@ include('../../../app/controllers/rol_usuarios/show_usuario.php');
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_usuario.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
-                          <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/delete_usuario.php" onclick="preguntar(event)" method="post" id="miformulario<?=$id;?>">
+                          <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/delete_usuario.php" onclick="preguntar<?=$codigo;?>(event)" method="post" id="miformulario<?=$codigo;?>">
                             <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
                             <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
                           </form>  
                           <script>
-                              function preguntar(event){
+                              function preguntar<?=$codigo;?>(event){
                                 event.preventDefault();
                                 Swal.fire({
                                   title: 'Eliminar Usuario',
@@ -76,7 +76,7 @@ include('../../../app/controllers/rol_usuarios/show_usuario.php');
                                   denyButtonColor: '#D92B3A',
                                 }).then((result) => {
                                   if(result.isConfirmed){
-                                    var form = $('#miformulario<?=$id;?>')
+                                    var form = $('#miformulario<?=$codigo;?>')
                                     form.submit();
                                   }
                                 });

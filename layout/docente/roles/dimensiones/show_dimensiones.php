@@ -1,8 +1,8 @@
 <?php 
-include('../../../app/config.php');
-include('../../../admin/layout/parte1_admin.php');
+include('../../../../app/config.php');
+include('../../../docente/layout/parte1_admin.php');
 
-include('../../../app/controllers/rol_dimensiones/show_dimension.php');
+include('../../../../app/controllers/rol_dimensiones/show_dimension.php');
 
 ?>
   <!-- Content Wrapper. Contains page content -->
@@ -101,8 +101,8 @@ include('../../../app/controllers/rol_dimensiones/show_dimension.php');
   <!-- /.content-wrapper -->
 
   <?php 
-  include('../../../admin/layout/parte2_admin.php');
-  include('../../../layout/mensajes.php');
+  include('../../../docente/layout/parte2_admin.php');
+  include('../../../mensajes.php');
   ?>
 
 <script>

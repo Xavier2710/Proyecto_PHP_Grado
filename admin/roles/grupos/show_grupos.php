@@ -3,6 +3,7 @@ include('../../../app/config.php');
 include('../../../admin/layout/parte1_admin.php');
 
 include('../../../app/controllers/rol_grupos/show_grupo.php');
+include('../../../app/controllers/rol_usuarios/show_usuario_asignatura.php');
 
 ?>
   <!-- Content Wrapper. Contains page content -->
@@ -44,26 +45,26 @@ include('../../../app/controllers/rol_grupos/show_grupo.php');
                 <tbody>
                   <?php 
                   $contador_grupo = 0;
-                  foreach($grupos as $grupo){
+                  foreach($usuarios_asignatura as $grupo){
                    $codigo = $grupo ['idgrupos']; 
                    $contador_grupo = $contador_grupo + 1;?>
                     
                     <tr>
-                      <td  style="text-align: center;"><?=$contador_grupo;?></td>
+                      <td style="text-align: center;"><?=$contador_grupo;?></td>
                       <td style="text-align: center;"><?=$grupo['idgrupos'];?></td>
                       <td style="text-align: center;"><?=$grupo['nombregrupo'];?></td>
                       <td style="text-align: center;"><?=$grupo['periodo'];?></td>
                       <td style="text-align: center;"><?=$grupo['año'];?></td>
-                      <td style="text-align: center;"><?=$grupo['asignaturas_idasignaturas'];?></td>
+                      <td style="text-align: center;"><?=$grupo['nombre_asignatura'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_grupo.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
-                          <form action="<?=APP_URL;?>/app/controllers/rol_grupos/delete_grupo.php" onclick="preguntar(event)" method="post" id="miformulario<?=$id;?>">
+                          <form action="<?=APP_URL;?>/app/controllers/rol_grupos/delete_grupo.php" onclick="preguntar<?=$codigo;?>(event)" method="post" id="miformulario<?=$codigo;?>">
                             <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
                             <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
                           </form>  
                           <script>
-                              function preguntar(event){
+                              function preguntar<?=$codigo;?>(event){
                                 event.preventDefault();
                                 Swal.fire({
                                   title: 'Eliminar Grupo',
@@ -76,7 +77,7 @@ include('../../../app/controllers/rol_grupos/show_grupo.php');
                                   denyButtonColor: '#D92B3A',
                                 }).then((result) => {
                                   if(result.isConfirmed){
-                                    var form = $('#miformulario<?=$id;?>')
+                                    var form = $('#miformulario<?=$codigo;?>')
                                     form.submit();
                                   }
                                 });

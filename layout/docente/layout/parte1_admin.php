@@ -107,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?=APP_URL;?>/admin/index_admin.php" class="nav-link"><strong><?=APP_NAME;?></strong></a>
+        <a href="<?=APP_URL;?>/layout/docente/index_docente.php" class="nav-link"><strong><?=APP_NAME;?></strong></a>
       </li>
     </ul>
     
@@ -169,11 +169,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
         </a>
-      </li>
+      </li> -->
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -181,7 +181,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #D5B256;">
     <!-- Brand Logo -->
-    <a href="<?=APP_URL;?>/admin/index_admin.php" class="brand-link">
+    <a href="<?=APP_URL;?>/layout/docente/index_docente.php" class="brand-link">
       <img src="<?=APP_URL;?>/public/dist/img/medicina2.png" alt="Logo_Medicina" class="brand-image elevation-3" style="opacity: .9; border-radius:5px">
       <span class="brand-text font-weight-light"><strong>Dashboard ABP</strong></span>
     </a>
@@ -234,31 +234,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview"> 
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/roles/asignaturas/show_asignaturas.php" class="nav-link " style="color: #F2F2F2;">
+                <a href="<?=APP_URL;?>/layout/docente/roles/asignaturas/show_asignaturas.php" class="nav-link " style="color: #F2F2F2;">
                   <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Asignaturas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/roles/dimensiones/show_dimensiones.php" class="nav-link " style="color: #F2F2F2;">
+                <a href="<?=APP_URL;?>/layout/docente/roles/dimensiones/show_dimensiones.php" class="nav-link " style="color: #F2F2F2;">
                   <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Dimensiones</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="<?=APP_URL;?>/admin/roles/usuarios/show_usuarios.php" class="nav-link" style="color: #F2F2F2;">
                   <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Usuarios</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/roles/grupos/show_grupos.php" class="nav-link " style="color: #F2F2F2;">
+                <a href="<?=APP_URL;?>/layout/docente/roles/grupos/show_grupos.php" class="nav-link " style="color: #F2F2F2;">
                   <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Grupos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/roles/preguntas/show_preguntas.php" class="nav-link " style="color: #F2F2F2;">
+                <a href="<?=APP_URL;?>/layout/docente/roles/preguntas/show_preguntas.php" class="nav-link " style="color: #F2F2F2;">
                   <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Preguntas</p>
                 </a>
@@ -277,7 +277,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           
           <li class="nav-item" style="border-color: #F2F2F2;"">
-            <a href="<?=APP_URL;?>/admin/creaciones_literarias/show_literarias.php" class="nav-link" style="color: #F2F2F2;">
+            <a href="<?=APP_URL;?>/layout/docente/creaciones_literarias/show_literarias.php" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-journal-bookmark-fill"></i></i>
               <p>
                 Creaciones Literarias
@@ -289,7 +289,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item text-left user-panel mt-3 pb-3 mb-3 d-flex" style="border-color: #F2F2F2;">
           </li>
 
-          <li class="nav-item has-treeview">
+          <!-- <li class="nav-item has-treeview">
                   <a href="#" class="nav-link" style="color: #F2F2F2;">
                     <i class="nav-icon fas"><i class="bi bi-people-fill"></i></i>
                     <p>
@@ -313,7 +313,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> -->
           <br>
           <li class="nav-item text-left user-panel mt-3 pb-3 mb-3 d-flex" style="border-color: #F2F2F2;">
             <a href="<?=APP_URL;?>/login/logout.php" class="nav-link" style="color: #F2F2F2;background-color: #D92B3A; border-radius: 15px">
