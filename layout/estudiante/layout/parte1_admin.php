@@ -9,6 +9,7 @@ if (isset($_SESSION['sesion_correo'])) {
   $datos_sesion_usuarios = $query_sesion->fetchAll(PDO::FETCH_ASSOC);
   foreach ($datos_sesion_usuarios as $datos_sesion_usuario) {
     $nombre_sesion_usuario = $datos_sesion_usuario['nombreCompleto'];
+    $rol_usuario = $datos_sesion_usuario['rol'];
   }
 }else{
   //echo 'El usuario no paso por el login';
@@ -223,7 +224,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <br>
+          <br>         
 
           <li class="nav-item">
             <a href="#" class="nav-link" style="color: #F2F2F2;">
@@ -243,10 +244,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
 
-          
           <li class="nav-item text-left user-panel mt-3 pb-3 mb-3 d-flex" style="border-color: #F2F2F2;">
           </li>
 
+          <li class="nav-item">
+            <a href="#" class="nav-link" style="color: #F2F2F2;">
+              <i class="nav-icon fas"><i class="bi bi-pencil-square"></i></i>
+              <p>
+                Datos Basicos
+              </p>
+            </a>
+          </li>
+          
           <!-- <li class="nav-item has-treeview">
                   <a href="#" class="nav-link" style="color: #F2F2F2;">
                     <i class="nav-icon fas"><i class="bi bi-people-fill"></i></i>

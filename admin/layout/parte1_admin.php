@@ -301,15 +301,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item" style="border-color: #F2F2F2;">
                       <a href="#" class="nav-link" style="color: #F2F2F2;">
                         <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
-                        <p>Administradores</p>
-                      </a>
-                      <a href="#" class="nav-link" style="color: #F2F2F2;">
-                        <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
-                        <p>Docentes</p>
-                      </a>
-                      <a href="#" class="nav-link" style="color: #F2F2F2;">
-                        <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
-                        <p>Estudiantes</p>
+                        <p>Datos Estudiantes</p>
                       </a>
                     </li>
                   </ul>

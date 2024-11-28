@@ -79,6 +79,10 @@ include('../app/controllers/rol_usuarios/show_usuario.php');
           </div>
           <!-- /.col -->
         </div>
+              </div>
+              <!-- /.card-body-->
+            </div>
+        </div>
       </div>
     </div>
     <!-- /.content -->
