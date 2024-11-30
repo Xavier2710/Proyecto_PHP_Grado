@@ -14,7 +14,7 @@ include('../../../../app/controllers/rol_asignaturas/datos_asignatura.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Actualizar Asignatura</h3>            
+          <h4>&nbsp;&nbsp;<strong>ACTUALIZAR ASIGNATURA</strong></h4>            
         </div>
         <br>        
         <div class="row">

@@ -11,7 +11,7 @@ include('../app/controllers/rol_usuarios/show_usuario.php');
     <div class="container">
       <div class="container">
         <div class="row">
-          <h4><strong>Dashboard</strong></h4>
+          <h4>&nbsp;&nbsp;<strong>DASHBOARD</strong></h4>
         </div>
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">

@@ -12,7 +12,7 @@ include('../../../../app/controllers/rol_usuarios/show_usuario_asignatura.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Lista de grupos</h3>            
+            <h4>&nbsp;&nbsp;<strong>LISTA DE GRUPOS</strong></h4>            
         </div>
         <br>        
         <div class="row">

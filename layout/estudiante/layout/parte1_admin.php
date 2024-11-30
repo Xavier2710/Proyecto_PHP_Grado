@@ -10,6 +10,7 @@ if (isset($_SESSION['sesion_correo'])) {
   foreach ($datos_sesion_usuarios as $datos_sesion_usuario) {
     $nombre_sesion_usuario = $datos_sesion_usuario['nombreCompleto'];
     $rol_usuario = $datos_sesion_usuario['rol'];
+    $id_usuario = $datos_sesion_usuario['idusuario'];
   }
 }else{
   //echo 'El usuario no paso por el login';
@@ -192,16 +193,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <br>
       <div class="user-panel mt-2 pb-4 mb-3 d-flex align-items-center justify-content-center" style="border-color: #F2F2F2;border-radius: 30px; background-color: #D92B3A;">
-        <br>
-        <div class="row">
-          <div class="image mr-1">
+        <div class="image mr-1">
             <img src="<?=APP_URL;?>/public/dist/img/avatar3.png" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <br>        
-          <div class="info">
-          <a style="color: #F2F2F2;"class="d-block"><?=$nombre_sesion_usuario;?></a>
-          </div>
-        </div>        
+        </div>
+        <div class="info">
+          <a style="color: #F2F2F2;" class="d-block"><?=$nombre_sesion_usuario;?></a>
+        </div>         
       </div>
 
       <!-- SidebarSearch Form -->
@@ -248,10 +245,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link" style="color: #F2F2F2;">
+            <a href="<?=APP_URL;?>/layout/estudiante/informacion_estudiante/update_estudiante.php" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-pencil-square"></i></i>
               <p>
-                Datos Basicos
+                Datos Básicos
               </p>
             </a>
           </li>

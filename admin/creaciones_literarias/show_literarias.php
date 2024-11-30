@@ -11,7 +11,7 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Lista de creaciones literarias</h3>            
+            <h4>&nbsp;&nbsp;<strong>LISTA DE CREACIONES LITERARIAS</strong></h4>            
         </div>
         <br>        
         <div class="row">

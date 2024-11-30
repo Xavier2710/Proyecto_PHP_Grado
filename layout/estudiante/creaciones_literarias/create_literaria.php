@@ -11,7 +11,7 @@ include('../../../app/controllers/programas/show_programa.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Nueva creación literaria</h3>            
+            <h4>&nbsp;&nbsp;<strong>NUEVA CREACIÓN LITERARIA</strong></h4>            
         </div>
         <br>        
         <div class="row">

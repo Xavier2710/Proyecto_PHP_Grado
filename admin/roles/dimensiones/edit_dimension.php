@@ -14,7 +14,7 @@ include('../../../app/controllers/rol_dimensiones/datos_dimension.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Actualizar Dimension</h3>            
+            <h4>&nbsp;&nbsp;<strong>ACTUALIZAR DIMENSION</strong></h4>            
         </div>
         <br>        
         <div class="row">

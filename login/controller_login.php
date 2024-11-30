@@ -18,6 +18,7 @@ foreach($usuarios as $usuario) {
     $clave_tabla = $usuario['clave'];
     $rol_tabla = $usuario['rol'];
     $nombre_tabla = $usuario['nombreCompleto'];
+    $codigo_tabla = $usuario['idusuario'];
     $contador = $contador + 1;
 }
 

@@ -8,7 +8,7 @@ include('../../../docente/layout/parte1_admin.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Creación nueva dimension</h3>            
+            <h4>&nbsp;&nbsp;<strong>CREACIÓN NUEVA DIMENSION</strong></h4>            
         </div>
         <br>        
         <div class="row">

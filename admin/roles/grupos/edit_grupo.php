@@ -15,7 +15,7 @@ include('../../../app/controllers/rol_asignaturas/show_asignatura.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Actualizar Grupo</h3>            
+            <h4>&nbsp;&nbsp;<strong>ACTUALIZAR GRUPO</strong></h4>            
         </div>
         <br>        
         <div class="row">

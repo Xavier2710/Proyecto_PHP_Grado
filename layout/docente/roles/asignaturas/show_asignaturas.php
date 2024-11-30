@@ -11,7 +11,7 @@ include('../../../../app/controllers/rol_asignaturas/show_asignatura.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Lista de asignaturas</h3>            
+            <h4>&nbsp;&nbsp;<strong>LISTA DE ASIGNATURAS</strong></h4>            
         </div>
         <br>        
         <div class="row">

@@ -11,7 +11,7 @@ include('../../../../app/controllers/rol_dimensiones/show_dimension.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Lista de dimensiones</h3>            
+            <h4>&nbsp;&nbsp;<strong>LISTA DE DIMENSIONES</strong></h>            
         </div>
         <br>        
         <div class="row">

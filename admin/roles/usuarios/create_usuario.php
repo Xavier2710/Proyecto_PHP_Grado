@@ -9,7 +9,7 @@ include('../../../admin/layout/parte1_admin.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Creación nuevo usuario</h3>            
+            <h4>&nbsp;&nbsp;<strong>CREACIÓN NUEVO USUARIO</strong></h4>            
         </div>
         <br>        
         <div class="row">

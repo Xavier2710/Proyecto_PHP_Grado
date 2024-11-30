@@ -9,7 +9,7 @@ include('../../../../app/controllers/rol_asignaturas/show_asignatura.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h3>Creación nuevo grupo</h3>            
+            <h4>&nbsp;&nbsp;<strong>CREACIÓN NUEVO GRUPO</strong></h4>            
         </div>
         <br>        
         <div class="row">

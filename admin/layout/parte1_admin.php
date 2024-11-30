@@ -191,16 +191,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <br>
       <div class="user-panel mt-2 pb-4 mb-3 d-flex align-items-center justify-content-center" style="border-color: #F2F2F2;border-radius: 30px; background-color: #D92B3A;">
-        <br>
-        <div class="row">
-          <div class="image mr-1">
+        <div class="image mr-1">
             <img src="<?=APP_URL;?>/public/dist/img/avatar3.png" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <br>        
-          <div class="info">
-          <a style="color: #F2F2F2;"class="d-block"><?=$nombre_sesion_usuario;?></a>
-          </div>
-        </div>        
+        </div>
+        <div class="info">
+          <a style="color: #F2F2F2;" class="d-block"><?=$nombre_sesion_usuario;?></a>
+        </div>       
       </div>
 
       <!-- SidebarSearch Form -->
@@ -293,19 +289,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="#" class="nav-link" style="color: #F2F2F2;">
                     <i class="nav-icon fas"><i class="bi bi-people-fill"></i></i>
                     <p>
-                      Usuarios
+                      Información Usuarios
                       <i class="right fas fa-angle-left" style="color: #D92B3A;"></i>
                     </p>
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item" style="border-color: #F2F2F2;">
-                      <a href="#" class="nav-link" style="color: #F2F2F2;">
+                      <a href="<?=APP_URL;?>/admin/estudiantes/show_estudiantes.php" class="nav-link" style="color: #F2F2F2;">
                         <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                         <p>Datos Estudiantes</p>
                       </a>
                     </li>
                   </ul>
-                </li>
+          </li>
           <br>
           <li class="nav-item text-left user-panel mt-3 pb-3 mb-3 d-flex" style="border-color: #F2F2F2;">
             <a href="<?=APP_URL;?>/login/logout.php" class="nav-link" style="color: #F2F2F2;background-color: #D92B3A; border-radius: 15px">

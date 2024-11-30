@@ -1,8 +1,8 @@
 <?php 
 include('../../../app/config.php');
-include('../../../admin/layout/parte1_admin.php');
+include('../layout/parte1_admin.php');
 
-include('../../../app/controllers/rol_usuarios/show_usuario.php');
+include('../../../app/controllers/rol_usuarios/show_usuario_estudiante.php');
 
 ?>
   <!-- Content Wrapper. Contains page content -->
@@ -11,7 +11,7 @@ include('../../../app/controllers/rol_usuarios/show_usuario.php');
     <div class="content">
       <div class="container">
         <div class="row">
-            <h4>&nbsp;&nbsp;<strong>LISTA DE USUARIOS</strong></h4>            
+            <h4>&nbsp;&nbsp;<strong>INFORMACIÓN COMPLETA ESTUDIANTES</strong></h4>            
         </div>
         <br>        
         <div class="row">
@@ -19,11 +19,7 @@ include('../../../app/controllers/rol_usuarios/show_usuario.php');
           <div class="col-md-12">
             <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
-                <h3 class="card-title">Usuarios Registrados</h3>
-
-                <div class="card-tools">
-                  <a href="create_usuario.php" class="btn btn-outline-danger">Crear Usuario <i class="bi bi-person-add"></i></a>
-                </div>
+                <h3 class="card-title">Registro Estudiantes</h3>
                 <!-- /.card-tools -->
               </div>
               <!-- /.card-header -->
@@ -36,54 +32,32 @@ include('../../../app/controllers/rol_usuarios/show_usuario.php');
                     <th>Codigo</th>
                     <th>Nombre Completo</th>
                     <th>Correo</th>
-                    <th>Clave</th>
                     <th>Rol</th>
-                    <th>Acción</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Procedencia Escolar</th>
+                    <th>Genero</th> 
+                    <th>Promedio Ponderado</th>                   
+                    <th>Asignaturas Validadas</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                  $contador_usuario = 0;
-                  foreach($usuarios as $usuario){
-                   $codigo = $usuario ['idusuario']; 
-                   $contador_usuario = $contador_usuario + 1;?>
+                  $contador_usuarios_estudiante = 0;
+                  foreach($usuarios_estudiante as $usuario_estudiante){
+                   $codigo = $usuario_estudiante ['idusuario']; 
+                   $contador_usuarios_estudiante = $contador_usuarios_estudiante + 1;?>
                     
                     <tr>
-                      <td  style="text-align: center;"><?=$contador_usuario;?></td>
-                      <td style="text-align: center;"><?=$usuario['idusuario'];?></td>
-                      <td><?=$usuario['nombreCompleto'];?></td>
-                      <td><?=$usuario['correo'];?></td>
-                      <td><?= substr($usuario['clave'], 0, 2) . str_repeat('*', strlen($usuario['clave']) - 2); ?></td>
-                      <td><?=$usuario['rol'];?></td>
-                      <td style="text-align: center; ">
-                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <a href="edit_usuario.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
-                          <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/delete_usuario.php" onclick="preguntar<?=$codigo;?>(event)" method="post" id="miformulario<?=$codigo;?>">
-                            <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
-                            <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
-                          </form>  
-                          <script>
-                              function preguntar<?=$codigo;?>(event){
-                                event.preventDefault();
-                                Swal.fire({
-                                  title: 'Eliminar Usuario',
-                                  text: '¿Desea eliminar el usuario seleccionado?',
-                                  icon: 'question',
-                                  showDenyButton: true,
-                                  confirmButtonText: 'Eliminar',
-                                  confirmButtonColor: '#D6B357',
-                                  denyButtonText: 'Cancelar',
-                                  denyButtonColor: '#D92B3A',
-                                }).then((result) => {
-                                  if(result.isConfirmed){
-                                    var form = $('#miformulario<?=$codigo;?>')
-                                    form.submit();
-                                  }
-                                });
-                              }
-                          </script>
-                        </div>
-                      </td>
+                      <td style="text-align: center;"><?=$contador_usuarios_estudiante;?></td>
+                      <td style="text-align: center;"><?=$usuario_estudiante['idusuario'];?></td>
+                      <td style="text-align: center;"><?=$usuario_estudiante['nombreCompleto'];?></td>
+                      <td style="text-align: center;"><?=$usuario_estudiante['correo'];?></td>
+                      <td style="text-align: center;"><?=$usuario_estudiante['rol'];?></td>        
+                      <td style="text-align: center;"><?=$usuario_estudiante['fechaN'];?></td> 
+                      <td style="text-align: center;"><?=$usuario_estudiante['procedenciaEscolar'];?></td>              
+                      <td style="text-align: center;"><?=$usuario_estudiante['genero'];?></td>              
+                      <td style="text-align: center;"><?=$usuario_estudiante['promedioPonderado'];?></td>              
+                      <td style="text-align: center;"><?=$usuario_estudiante['repeticionAsignatura'];?></td>              
                     </tr>  
                   <?php
                   }
@@ -104,8 +78,8 @@ include('../../../app/controllers/rol_usuarios/show_usuario.php');
   <!-- /.content-wrapper -->
 
   <?php 
-  include('../../../admin/layout/parte2_admin.php');
-  include('../../../layout/mensajes.php');
+  include('../layout/parte2_admin.php');
+  include('../../mensajes.php');
   ?>
 
 <script>
