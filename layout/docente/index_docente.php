@@ -29,29 +29,14 @@ include('../../app/controllers/rol_usuarios/show_usuario.php');
                       </div>
                       <div class="card-footer">
                         <div class="row">
-                          <div class="col-sm-4 border-right">
+                          <div class="col-sm-12 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">3,200</h5>
-                              <span class="description-text">SEGUIDOS</span>
+                              <span class="description-text"><STROng>CREACIONES LITERARIAS CARGADAS</STROng></span>
+                              <h5 class="description-header">3</h5>
                             </div>
                             <!-- /.description-block -->
                           </div>
                           <!-- /.col -->
-                          <div class="col-sm-4 border-right">
-                            <div class="description-block">
-                              <h5 class="description-header">13,000</h5>
-                              <span class="description-text">SEGUIDORES</span>
-                            </div>
-                            <!-- /.description-block -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col-sm-4">
-                            <div class="description-block">
-                              <h5 class="description-header">35</h5>
-                              <span class="description-text">PUBLICACIONES</span>
-                            </div>
-                            <!-- /.description-block -->
-                          </div>
                           <!-- /.col -->
                         </div>
                         <!-- /.row -->

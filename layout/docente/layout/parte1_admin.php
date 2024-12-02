@@ -234,7 +234,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link " style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-tools"></i></i>
               <p>
-                Configuración
+                Reportes
                 <i class="right fas fa-angle-left" style="color: #D92B3A;"></i>
               </p>
             </a>

@@ -21,9 +21,6 @@ include('../../../../app/controllers/rol_dimensiones/show_dimension.php');
               <div class="card-header">
                 <h3 class="card-title">Dimensiones Registradas</h3>
 
-                <div class="card-tools">
-                  <a href="create_dimension.php" class="btn btn-outline-danger">Crear Dimension <i class="bi bi-bounding-box"></i></a>
-                </div>
                 <!-- /.card-tools -->
               </div>
               <!-- /.card-header -->
@@ -36,7 +33,6 @@ include('../../../../app/controllers/rol_dimensiones/show_dimension.php');
                     <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Descripcion</th>
-                    <th>Acción</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,35 +47,7 @@ include('../../../../app/controllers/rol_dimensiones/show_dimension.php');
                       <td style="text-align: center;"><?=$dimension['iddimensiones'];?></td>
                       <td style="text-align: center;"><?=$dimension['nombre'];?></td>
                       <td><?=$dimension['descripcion'];?></td>
-                      <td style="text-align: center; ">
-                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <a href="edit_dimension.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
-                          <form action="<?=APP_URL;?>/app/controllers/rol_dimensiones/delete_dimension.php" onclick="preguntar<?=$codigo;?>(event)" method="post" id="miformulario<?=$codigo;?>">
-                            <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
-                            <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
-                          </form>  
-                          <script>
-                              function preguntar<?=$codigo;?>(event){
-                                event.preventDefault();
-                                Swal.fire({
-                                  title: 'Eliminar Dimension',
-                                  text: '¿Desea eliminar la dimension seleccionado?',
-                                  icon: 'question',
-                                  showDenyButton: true,
-                                  confirmButtonText: 'Eliminar',
-                                  confirmButtonColor: '#D6B357',
-                                  denyButtonText: 'Cancelar',
-                                  denyButtonColor: '#D92B3A',
-                                }).then((result) => {
-                                  if(result.isConfirmed){
-                                    var form = $('#miformulario<?=$codigo;?>')
-                                    form.submit();
-                                  }
-                                });
-                              }
-                          </script>
-                        </div>
-                      </td>
+                      
                     </tr>
   
                   <?php
