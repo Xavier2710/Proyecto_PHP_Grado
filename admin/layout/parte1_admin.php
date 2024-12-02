@@ -219,6 +219,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+          
+          <br>
+          <li class="nav-item">
+            <a href="<?=APP_URL;?>/admin/index_admin.php" class="nav-link" style="color: #F2F2F2;">
+              <i class="nav-icon fas"><i class="bi bi-house"></i></i>
+              <p>
+                HOME
+              </p>
+            </a>
+          </li>
           <br>
           <li class="nav-item">
             <a href="#" class="nav-link " style="color: #F2F2F2;">
@@ -264,10 +275,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <li class="nav-item">
-            <a href="#" class="nav-link" style="color: #F2F2F2;">
+            <a href="<?=APP_URL;?>/admin/cuestionarios/show_cuestionario.php" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-pencil-square"></i></i>
               <p>
-                Cuestionario
+                Cuestionarios
               </p>
             </a>
           </li>

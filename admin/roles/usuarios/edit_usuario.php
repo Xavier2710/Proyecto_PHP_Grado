@@ -48,7 +48,7 @@ include('../../../app/controllers/rol_usuarios/datos_usuario.php');
                     <div class="form-row">                        
                         <div class="col-md-9">
                             <select class="custom-select" name="txt_rol">
-                                <option value="<?=$clave_usuario;?>" disabled selected>Seleccione rol de usuario...</option>
+                                <option value="<?=$rol_usuario;?>" selected><?=$rol_usuario;?></option>
                                 <option value="Administrador">Administrador</option>
                                 <option value="Docente">Docente</option>
                                 <option value="Estudiante">Estudiante</option>

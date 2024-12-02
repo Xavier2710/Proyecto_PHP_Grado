@@ -59,42 +59,55 @@ foreach ($usuarios_estudiante as $usuario_estudiante) {
         <div class="row">
 
           <div class="col-md-12" >
-            <div class="card card-outline card-danger" style="border-color: #D92B3A;">
+            <div class="card card-outline card-danger" style="border-color: #D6B357;">
               <div class="card-header">
                 <h3 class="card-title">Datos Registrados</h3>
               </div>
               <div class="card-body">
               
-                <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/update_usuario.php" method="post">
+                <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/update_usuario_estudiante.php" method="post">
                     <div class="form-row">
-                        <div class="col-md-2">
-                        <input type="text" readonly name="txt_codigo" class="form-control" value=" Codigo: <?=$codigo_estudiante;?>" placeholder="Codigo">
+                        <div>
+                          <label for="" style="text-align:center">Codigo: </label>
+                        </div>
+                        <div class="col-md-1">
+                        <input type="text" readonly name="txt_codigo" class="form-control" value="<?=$codigo_estudiante;?>" placeholder="Codigo">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="txt_nombre" class="form-control" value="<?=$nombre_estudiante;?>" placeholder="Nombre Completo">
+                            <input type="text" name="txt_nombre" class="form-control" title="Nombre Completo" value="<?=$nombre_estudiante;?>" placeholder="Nombre Completo">
                         </div>
                         <div class="col-md-4">
-                            <input type="email" name="txt_email" class="form-control" value="<?=$correo_estudiante;?>" placeholder="Correo">
+                            <input type="email" name="txt_email" class="form-control" title="Correo Eléctronico" value="<?=$correo_estudiante;?>" placeholder="Correo">
                         </div>
                     </div>
                     <hr>
-                    <div class="form-row">                        
-                        <div class="col">
-                        <input type="email" name="txt_correo" class="form-control" value="<?=$correo_usuario;?>" placeholder="Correo">
-                        </div>
-                        <div class="col">
-                        <input type="password" name="txt_clave" class="form-control" value="<?=$clave_usuario;?>" placeholder="Contraseña">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="form-row">                        
-                        <div class="col-md-9">
-                            <select class="custom-select" name="txt_rol">
-                                <option value="<?=$clave_usuario;?>" disabled selected>Seleccione rol de usuario...</option>
-                                <option value="Administrador">Administrador</option>
-                                <option value="Docente">Docente</option>
-                                <option value="Estudiante">Estudiante</option>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <select class="custom-select" name="txt_rol" title="Rol">
+                                <option value="<?=$rol_estudiante;?>" disabled selected><?=$rol_estudiante;?></option>
                             </select>
+                        </div>                       
+                        <div class="col-md-4">
+                        <input type="date" name="txt_fecha" class="form-control" title="Fecha de Nacimiento" value="<?=$fecha_estudiante;?>" placeholder="Fecha de Nacimiento">
+                        </div>
+                        <div class="col-md-5">
+                          <select class="custom-select" name="txt_escolar" title="Procedencia Escolar">
+                            <option value="<?=$escolar_estudiante;?>" disabled selected><?=$escolar_estudiante;?></option>
+                            <option value="Privado">Privado</option>
+                            <option value="Público">Público</option>
+                          </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-row">                        
+                        <div class="col-md-2">
+                          <input type="text" name="txt_genero" class="form-control" value="<?=$genero_estudiante;?>" title="Genero" style="text-align: center;" placeholder="Genero">
+                        </div>
+                        <div class="col-md-3">
+                          <input type="text" name="txt_promedio" class="form-control" value="<?=$promedio_estudiante;?>" title="Promedio Ponderado" style="text-align: center;" placeholder="Promedio Ponderado">
+                        </div>
+                        <div class="col-md-3">
+                          <input type="text" name="txt_repeticion" class="form-control" value="<?=$repeticion_estudiante;?>" title="# Materias Validadas" style="text-align: center;" placeholder="# Materias Validadas">
                         </div>
                     </div>
                     <hr>

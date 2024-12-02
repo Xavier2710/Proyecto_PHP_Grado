@@ -36,7 +36,7 @@ include('../../../app/controllers/rol_asignaturas/show_asignatura.php');
                         <input type="text" name="txt_nombre" class="form-control" value="<?=$nombre_grupo;?>" placeholder="Nombre Grupo">
                       </div> 
                       <div class="col-md-2">
-                        <input type="number" name="txt_año" min="1900" max="2100" class="form-control" value="<?=$año_grupo;?>" placeholder="Año(YYYY)">
+                        <input type="number" name="txt_ano" min="1900" max="2100" class="form-control" value="<?=$año_grupo;?>" placeholder="Año(YYYY)">
                       </div>                                          
                     </div>
                     <hr>

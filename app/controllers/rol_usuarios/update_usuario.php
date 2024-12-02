@@ -34,7 +34,7 @@ if(($txt_nombre == "") || ($txt_correo == "")){
             session_start();
             $_SESSION['mensaje'] = "Se actualizó el usuario con éxito";
             $_SESSION['icono'] = "success";
-            header('Location:'.APP_URL."/admin/roles/usuarios/edit_usuario.php");
+            header('Location:'.APP_URL."/admin/roles/usuarios/show_usuarios.php");
         } else {
             session_start();
             $_SESSION['mensaje'] = "Error no se pudo actualizar el usuario";
