@@ -1,6 +1,6 @@
 <?php 
 include('../../../app/config.php');
-include('../../../admin/layout/parte1_admin.php');
+include('../layout/parte1_admin.php');
 
 include('../../../app/controllers/rol_usuarios/show_usuario_estudiante.php');
 

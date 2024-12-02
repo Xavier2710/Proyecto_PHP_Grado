@@ -221,6 +221,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+          <br>
+          <li class="nav-item">
+            <a href="<?=APP_URL;?>/layout/estudiante/index_estudiante.php" class="nav-link" style="color: #F2F2F2;">
+              <i class="nav-icon fas"><i class="bi bi-house"></i></i>
+              <p>
+                HOME
+              </p>
+            </a>
+          </li>
           <br>         
 
           <li class="nav-item">
