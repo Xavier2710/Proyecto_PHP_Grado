@@ -20,31 +20,31 @@ include('../app/config.php');
   <link rel="stylesheet" href="<?=APP_URL;?>/public/dist/css/adminlte.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
-    body {
-      background-image: url('../public/dist/img/fondo2.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  body {
+    background-image: url('../public/dist/img/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;    /* Centrar verticalmente */
+  }
 
-    .container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-      width: 90%;
-      max-width: 1200px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-    }
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Dos columnas en PC */
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  }
 
-    /* Cuadro de bienvenida */
-    .welcome-box {
-      background-color: rgba(255, 255, 255, 0.8);
+  .welcome-box {
+    background-color: rgba(255, 255, 255, 0.8);
       padding: 30px;
       display: flex;
       flex-direction: column;
@@ -55,42 +55,96 @@ include('../app/config.php');
       box-shadow: 0 4px 10px rgba(100, 100, 100, 0.8);
       max-width: 700px; 
       margin: 5%;
+  }
+
+  .welcome-box h2 {
+    color: #2C3E50;
+    margin-bottom: 20px;
+  }
+
+  .welcome-box p {
+    color: #34495E;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .login-card-body {
+    background-color: #f7f9fc;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(100, 100, 100, 0.8);
+  }
+
+  /* Media Query para pantallas medianas y pequeñas */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Una columna en pantallas medianas y pequeñas */
+      gap: 10px;
+    }
+
+    .welcome-box {
+      padding: 20px;
     }
 
     .welcome-box h2 {
-      color: #2C3E50;
-      margin-bottom: 20px;
+      font-size: 1.6rem; /* Texto más pequeño */
     }
 
     .welcome-box p {
-      color: #34495E;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1rem; /* Ajustar texto */
     }
 
     .login-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
+      padding: 20px;
     }
 
     .login-card-body {
-      background-color: #f7f9fc;
-      border-radius: 15px;
-      padding: 20px;
-      width: 100%;
-      max-width: 400px;      
-      box-shadow: 0 4px 10px rgba(100, 100, 100, 0.8);
+      max-width: 100%; /* Asegurar que el formulario ocupe el ancho */
+      padding: 15px;
     }
-  </style>
+  }
+
+  /* Media Query para pantallas muy pequeñas */
+  @media (max-width: 576px) {
+    .welcome-box h2 {
+      font-size: 1.4rem; /* Texto más pequeño aún */
+    }
+
+    .welcome-box p {
+      font-size: 0.9rem;
+    }
+
+    .login-card-body {
+      padding: 10px; /* Reducir espacio interno */
+    }
+
+    .input-group input {
+      font-size: 0.9rem; /* Reducir tamaño de texto en el input */
+    }
+
+    button[type="submit"] {
+      font-size: 0.9rem; /* Botón más pequeño */
+    }
+  }
+</style>
+
+
 </head>
 <body>
 <div class="container">
   <!-- Cuadro de bienvenida -->
   <div class="welcome-box">
     <h2><strong>Bienvenido a <?=APP_NAME;?></strong></h2>
-    <p><em>Dashboard para visualizar el impacto de la formación médica en atención primaria y salud pública mediante la metodología de aprendizaje basado en problemas</em></p>
+    <p><em>Permite visualizar el impacto de la formación médica en atención primaria y salud pública mediante la metodología de Aprendizaje Basado en Problemas haciendo uso de creaciones literarias</em></p>
   </div>
 
   <!-- Cuadro de login -->
