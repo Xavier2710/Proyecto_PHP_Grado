@@ -3,7 +3,7 @@ include('../../app/config.php');
 include('../../admin/layout/parte1_admin.php');
 
 include('../../app/controllers/rol_usuarios/show_usuario.php');
-include('../../app/controllers/programas/show_programa.php');
+include('../../app/controllers/rol_asignaturas/show_asignatura.php');
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -35,7 +35,7 @@ include('../../app/controllers/programas/show_programa.php');
                   <hr>
                   <div class="form-row">
                     <div class="col-md-5">
-                      <input type="file" id="file" name="txt_archivo" class="form-control" placeholder="Seleccione el archivo...">                  
+                      <input type="file" id="file" accept=".pdf,.doc,.docx,.txt" name="txt_archivo" class="form-control" placeholder="Seleccione el archivo...">                  
                     </div>
                     <div class="col-md-7">
                       <output id="list">
@@ -58,10 +58,10 @@ include('../../app/controllers/programas/show_programa.php');
                     </div> 
                     <div class="col-md-3">
                       <select class="custom-select" name="txt_autor">
-                        <option value="" disabled selected>Seleccione Programa...</option>
+                        <option value="" disabled selected>Seleccione Asignatura...</option>
                         <?php
-                        foreach($programas as $programa) {?>
-                          <option value="<?=$programa['idPrograma'];?>"><?=$programa['nombre'];?></option>
+                        foreach($asignaturas as $asignatura) {?>
+                          <option value="<?=$asignatura['idasignaturas'];?>"><?=$asignatura['idasignaturas'];?> - <?=$asignatura['nombre'];?></option>
                         <?php 
                          }                        
                         ?>                        

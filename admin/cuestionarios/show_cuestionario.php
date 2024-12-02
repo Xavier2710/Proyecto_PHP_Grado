@@ -18,12 +18,12 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
         <div class="row">
 
           <div class="col-md-12">
-            <div class="card card-outline card-danger" style="border-color: #D6B357;">
+            <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
                 <h3 class="card-title">Cuestionarios Registrados</h3>
 
                 <div class="card-tools">
-                  <a href="create_cuestionario.php" class="btn btn-outline-danger" style="border-color: #D6B357;">Crear Cuestionario <i class="bi bi-pencil-square"></i></a>
+                  <a href="create_cuestionario.php" class="btn btn-outline-danger" style="border-color: #D92B3A;">Crear Cuestionario <i class="bi bi-pencil-square"></i></a>
                 </div>
                 <!-- /.card-tools -->
               </div>
@@ -134,11 +134,11 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
           } 
       },
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": [{text:'Copiar',extend:'copy',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'}},
-                  {text:'Excel',extend:'excel',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
-                  {text:'PDF',extend:'pdf',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
-                  {text:'Imprimir',extend:'print',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias'},
-                  {text:'Vista de Columnas',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},extend:'colvis'}           
+      "buttons": [{text:'Copiar',extend:'copy',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'}},
+                  {text:'Excel',extend:'excel',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
+                  {text:'PDF',extend:'pdf',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
+                  {text:'Imprimir',extend:'print',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias'},
+                  {text:'Vista de Columnas',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},extend:'colvis'}           
                 ]
                 
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');

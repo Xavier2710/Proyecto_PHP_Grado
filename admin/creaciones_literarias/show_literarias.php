@@ -17,12 +17,12 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
         <div class="row">
 
           <div class="col-md-12">
-            <div class="card card-outline card-danger" style="border-color: #D6B357;">
+            <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
                 <h3 class="card-title">Creaciones Literarias Registradas</h3>
 
                 <div class="card-tools">
-                  <a href="create_literaria.php" class="btn btn-outline-danger" style="border-color: #D6B357;">Nueva creacion literaria <i class="fas fa-book"></i></a>
+                  <a href="create_literaria.php" class="btn btn-outline-danger" style="border-color: #D92B3A;">Nueva creacion literaria <i class="fas fa-book"></i></a>
                 </div>
                 <!-- /.card-tools -->
               </div>
@@ -37,7 +37,7 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                     <th>Nombre</th>
                     <th>Archivo</th>
                     <th>Autor</th>
-                    <th>Programa</th>
+                    <th>Asignatura</th>
                     <th>Acción</th>
                   </tr>
                 </thead>
@@ -54,7 +54,8 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                       <td><?=$literaria['nombre'];?></td>
                       <td><?=$literaria['archivo'];?></td>
                       <td><?=$literaria['autor'];?></td>
-                      <td><?=$literaria['Programa_idPrograma'];?></td>
+                      <td><?=$literaria['fechaCargue'];?></td>
+                      <td><?=$literaria['asignaturas_idasignaturas'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_asignatura.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
@@ -133,11 +134,11 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
           } 
       },
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": [{text:'Copiar',extend:'copy',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'}},
-                  {text:'Excel',extend:'excel',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
-                  {text:'PDF',extend:'pdf',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
-                  {text:'Imprimir',extend:'print',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias'},
-                  {text:'Vista de Columnas',className: 'btn', attr:{style: 'background-color: #D6B357;border-color:#F2F2F2;'},extend:'colvis'}           
+      "buttons": [{text:'Copiar',extend:'copy',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'}},
+                  {text:'Excel',extend:'excel',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
+                  {text:'PDF',extend:'pdf',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
+                  {text:'Imprimir',extend:'print',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias'},
+                  {text:'Vista de Columnas',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},extend:'colvis'}           
                 ]
                 
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');

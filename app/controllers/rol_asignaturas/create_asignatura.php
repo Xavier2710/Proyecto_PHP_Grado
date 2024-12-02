@@ -6,7 +6,7 @@ $txt_codigo = $_POST['txt_codigo'];
 $txt_nombre = $_POST['txt_nombre'];
 $txt_nombre = mb_strtoupper($txt_nombre);
 
-// Para validar los campos como vacios
+
 
 if(($txt_codigo == "") || ($txt_nombre == "")){
     session_start();

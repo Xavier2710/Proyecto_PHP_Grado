@@ -59,7 +59,7 @@ foreach ($usuarios_estudiante as $usuario_estudiante) {
         <div class="row">
 
           <div class="col-md-12" >
-            <div class="card card-outline card-danger" style="border-color: #D6B357;">
+            <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
                 <h3 class="card-title">Datos Registrados</h3>
               </div>
