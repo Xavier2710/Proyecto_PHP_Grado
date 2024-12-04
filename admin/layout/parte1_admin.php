@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['sesion_correo'])) {
-  //echo'El usuario se logueo';
+  
   $correo_sesion = $_SESSION['sesion_correo'] ;
   $query_sesion = $pdo->prepare("SELECT * FROM usuarios WHERE correo = '$correo_sesion'");
   $query_sesion->execute();
@@ -11,7 +11,7 @@ if (isset($_SESSION['sesion_correo'])) {
     $nombre_sesion_usuario = $datos_sesion_usuario['nombreCompleto'];
   }
 }else{
-  //echo 'El usuario no paso por el login';
+  
   header('Location:'.APP_URL.'/login/index_login.php');
 } 
 ?>
@@ -26,6 +26,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=APP_NAME;?></title>
+
+  <link rel="icon" type="image/png" href="<?=APP_URL;?>/public/images/favicon-16x16.png">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

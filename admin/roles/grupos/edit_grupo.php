@@ -64,7 +64,7 @@ include('../../../app/controllers/rol_asignaturas/show_asignatura.php');
                     <hr>
                     <div class="form-row">
                         <div class="col-md-12">
-                          <button type="submit" class="btn btn-primary" style="background-color: #D6B357; border-color: #D6B357; color: #F2F2F2;">Registrar</button>
+                          <button type="submit" class="btn btn-primary" style="background-color: #D6B357; border-color: #D6B357; color: #F2F2F2;">Actualizar</button>
                           <a href="show_grupos.php" class="btn btn-danger" style="color: #F2F2F2;">Cancelar</a>
                         </div>
                     </div>                    

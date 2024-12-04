@@ -10,6 +10,8 @@ include('../app/config.php');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=APP_NAME;?></title>
 
+  <link rel="icon" type="image/png" href="<?=APP_URL;?>/public/images/favicon-16x16.png">
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->

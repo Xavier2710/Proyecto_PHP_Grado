@@ -9,7 +9,7 @@ $txt_periodo = $_POST['txt_periodo'];
 $txt_ano = $_POST['txt_ano'];
 $txt_asignatura = $_POST['txt_asignatura'];
 
-// Validación de campos vacíos
+
 if(($txt_nombre == "")){
     session_start();
     $_SESSION['mensaje'] = "Debe diligenciar todos los campos";
@@ -39,13 +39,13 @@ if(($txt_nombre == "")){
             session_start();
             $_SESSION['mensaje'] = "Error no se pudo actualizar el grupo";
             $_SESSION['icono'] = "error";
-            header('Location:'.APP_URL."/admin/roles/grupos/show_grupos.php");
+            header('Location:'.APP_URL."/admin/roles/grupos/edit_grupo.php");
         }
     } catch (Exception $exception) {        
         session_start();
         $_SESSION['mensaje'] = "No se puede actualizar";
         $_SESSION['icono'] = "error";
-        header('Location:'.APP_URL."/admin/roles/grupos/show_grupos.php");
+        header('Location:'.APP_URL."/admin/roles/grupos/edit_grupo.php");
     }
 }
 ?>

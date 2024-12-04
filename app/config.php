@@ -6,8 +6,8 @@ define('PASSWORD', '102030Xavier*');
 define('BD', 'bd_medicina');
 
 define('APP_NAME', 'Dashboard Medicina');
-//define('APP_URL', 'http://localhost/proyecto_grado');
-define('APP_URL', 'http://172.20.10.5/proyecto_grado');
+define('APP_URL', 'http://localhost/proyecto_grado');
+//define('APP_URL', 'http://172.20.10.5/proyecto_grado');
 define('KEY_API_MAPS', '');
 
 $servidor = "mysql:dbname=".BD.";host=".SERVIDOR;
