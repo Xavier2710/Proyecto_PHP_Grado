@@ -16,7 +16,7 @@ include('../../../app/controllers/rol_usuarios/show_usuario_estudiante.php');
         <br>        
         <div class="row">
 
-          <div class="col-md-13">
+          <div class="col-md-12">
             <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
                 <h3 class="card-title">Registro Estudiantes</h3>
@@ -29,7 +29,6 @@ include('../../../app/controllers/rol_usuarios/show_usuario_estudiante.php');
                 <thead>
                   <tr style="text-align: center;">
                     <th>Item</th>
-                    <th>Grupo</th>
                     <th>Codigo</th>
                     <th>Nombre Completo</th>
                     <th>Correo</th>
@@ -37,7 +36,8 @@ include('../../../app/controllers/rol_usuarios/show_usuario_estudiante.php');
                     <th>Procedencia Escolar</th>
                     <th>Genero</th> 
                     <th>Promedio Ponderado</th>                   
-                    <th>Asignaturas Validadas</th>
+                    <!-- <th>Asignaturas Validadas</th> -->
+                    <th>Grupo</th>
                     <th>Cambiar Grupo</th>
                   </tr>
                 </thead>
@@ -54,7 +54,6 @@ include('../../../app/controllers/rol_usuarios/show_usuario_estudiante.php');
                   
                     <tr>
                       <td style="text-align: center;"><?=$contador_usuarios_estudiante;?></td>
-                      <td style="text-align: center;"><?=$nom_grupo;?></td>
                       <td style="text-align: center;"><?=$usuario_estudiante['idusuario'];?></td>
                       <td style="text-align: center;"><?=$usuario_estudiante['nombreCompleto'];?></td>
                       <td style="text-align: center;"><?=$usuario_estudiante['correo'];?></td>        
@@ -62,7 +61,8 @@ include('../../../app/controllers/rol_usuarios/show_usuario_estudiante.php');
                       <td style="text-align: center;"><?=$usuario_estudiante['procedenciaEscolar'];?></td>              
                       <td style="text-align: center;"><?=$usuario_estudiante['genero'];?></td>              
                       <td style="text-align: center;"><?=$usuario_estudiante['promedioPonderado'];?></td>              
-                      <td style="text-align: center;"><?=$usuario_estudiante['repeticionAsignatura'];?></td>
+                      <!-- <td style="text-align: center;"><?=$usuario_estudiante['repeticionAsignatura'];?></td> -->
+                      <td style="text-align: center;"><?=$nom_grupo;?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_grupo_estudiante.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>                          

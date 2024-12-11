@@ -9,7 +9,7 @@ foreach($datos_grupos as $datos_grupo){
     $codigo_grupo = $datos_grupo['idgrupos'];
     $nombre_grupo = $datos_grupo['nombregrupo'];
     $periodo_grupo = $datos_grupo['periodo'];
-    $año_grupo = $datos_grupo['año'];
+    $ano_grupo = $datos_grupo['año'];
     $asignatura_grupo = $datos_grupo['asignaturas_idasignaturas'];
 }
 

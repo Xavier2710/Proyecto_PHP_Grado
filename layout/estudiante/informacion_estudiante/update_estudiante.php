@@ -92,7 +92,7 @@ foreach ($usuarios_estudiante as $usuario_estudiante) {
                         </div>
                         <div class="col-md-5">
                           <select class="custom-select" name="txt_escolar" title="Procedencia Escolar">
-                            <option value="<?=$escolar_estudiante;?>" disabled selected><?=$escolar_estudiante;?></option>
+                            <option value="<?=$escolar_estudiante;?>" selected><?=$escolar_estudiante;?></option>
                             <option value="Privado">Privado</option>
                             <option value="Público">Público</option>
                           </select>

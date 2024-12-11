@@ -2,11 +2,11 @@
 
 $codigo = $_GET['id'];
 
-include('../../app/config.php');
-include('../../admin/layout/parte1_admin.php');
-include('../../app/controllers/rol_usuarios/datos_usuario_estudiante_grupo.php');
-include('../../app/controllers/rol_usuarios/datos_usuario.php');
-include('../../app/controllers/rol_grupos/show_grupo.php');
+include('../../../app/config.php');
+include('../layout/parte1_admin.php');
+include('../../../app/controllers/rol_usuarios/datos_usuario_estudiante_grupo.php');
+include('../../../app/controllers/rol_usuarios/datos_usuario.php');
+include('../../../app/controllers/rol_grupos/show_grupo.php');
 ?>
   <!-- Content Wrapper. Contains page content -->
    
@@ -27,7 +27,7 @@ include('../../app/controllers/rol_grupos/show_grupo.php');
               </div>
               <div class="card-body">
               
-                <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/update_usuario_estudiante_grupo.php" method="post">
+                <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/update_usuario_estudiante_grupo_docente.php" method="post">
                     <div class="form-row">
                         <div class="col-md-3">
                         <input type="text"  name="txt_codigo" title="Codigo" readonly value="<?=$codigo_estudiante;?>" class="form-control" placeholder="Codigo">
@@ -71,6 +71,6 @@ include('../../app/controllers/rol_grupos/show_grupo.php');
   <!-- /.content-wrapper -->
 
   <?php 
-  include('../../admin/layout/parte2_admin.php');
-  include('../../layout/mensajes.php');
+  include('../layout/parte2_admin.php');
+  include('../../mensajes.php');
   ?>

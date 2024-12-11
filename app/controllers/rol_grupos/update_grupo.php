@@ -19,11 +19,11 @@ if(($txt_nombre == "")){
     $sentencia = $pdo->prepare("UPDATE grupos 
         SET nombregrupo=:txt_nombre,
             periodo=:txt_periodo,
-            año:txt_ano,
-            asignaturas_idasignaturas:txt_asignatura
+            año=:txt_ano,
+            asignaturas_idasignaturas=:txt_asignatura
         WHERE idgrupos=:txt_codigo");
 
-    $sentencia->bindParam(':txt_nombre', $txt_nombree);
+    $sentencia->bindParam(':txt_nombre', $txt_nombre);
     $sentencia->bindParam(':txt_periodo', $txt_periodo);
     $sentencia->bindParam(':txt_ano', $txt_ano);
     $sentencia->bindParam(':txt_asignatura', $txt_asignatura);
@@ -39,13 +39,13 @@ if(($txt_nombre == "")){
             session_start();
             $_SESSION['mensaje'] = "Error no se pudo actualizar el grupo";
             $_SESSION['icono'] = "error";
-            header('Location:'.APP_URL."/admin/roles/grupos/edit_grupo.php");
+            header('Location:'.APP_URL."/admin/roles/grupos/edit_grupo.php?id=".$txt_codigo);
         }
     } catch (Exception $exception) {        
         session_start();
         $_SESSION['mensaje'] = "No se puede actualizar";
         $_SESSION['icono'] = "error";
-        header('Location:'.APP_URL."/admin/roles/grupos/edit_grupo.php");
+        header('Location:'.APP_URL."/admin/roles/grupos/edit_grupo.php?id=".$txt_codigo);
     }
 }
 ?>

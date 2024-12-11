@@ -8,6 +8,8 @@ $datos_asignaturas = $query_asignaturas->fetchAll(PDO::FETCH_ASSOC);
 foreach($datos_asignaturas as $datos_asignatura){
     $codigo_asignatura = $datos_asignatura['idasignaturas'];
     $nombre_asignatura = $datos_asignatura['nombre'];
+    $programa_asignatura = $datos_asignatura['programa_idPrograma'];
+    $universidad_asignatura = $datos_asignatura['programa_Universidad_idUniversidad'];
 }
 
 ?>

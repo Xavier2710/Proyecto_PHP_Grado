@@ -270,7 +270,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
                   <p>Preguntas</p>
                 </a>
-              </li>              
+              </li>
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/layout/docente/roles/programas/show_programas.php" class="nav-link " style="color: #F2F2F2;">
+                  <i class="fas fa-caret-right nav-icon" style="color: #D92B3A;"></i>
+                  <p>Programas</p>
+                </a>
+              </li>               
             </ul>
           </li>
 

@@ -10,7 +10,7 @@ include('../../app/controllers/rol_usuarios/show_usuario.php');
     <br>
     <div class="container">
         <div class="col-md-13">
-          <div class="card card-outline card-danger" style="border-color:#D6B357;">
+          <div class="card card-outline card-danger" style="border-color:#D92B3A;">
             <div class="card-header">
               <h4><strong>DOCENTE</strong></h4>
             </div>
@@ -22,7 +22,7 @@ include('../../app/controllers/rol_usuarios/show_usuario.php');
                       <!-- Add the bg color to the header using any of the bg-* classes -->
                       <div class="widget-user-header text-white" style="background: url('<?=APP_URL;?>/public/dist/img/portada.jpg') center center;">
                         <h3 class="widget-user-username text-right" style="color:#F2F2F2"><?=$nombre_sesion_usuario;?></h3>
-                        <h3 class="widget-user-username text-right" style="color:#F2F2F2">DOCENTE</h3>
+                        <h3 class="widget-user-username text-right" style="color:#F2F2F2">Docente</h3>
                       </div>
                       <div class="widget-user-image">
                         <img class="img-circle" src="<?=APP_URL;?>/public/dist/img/avatar3.png" alt="User Avatar">

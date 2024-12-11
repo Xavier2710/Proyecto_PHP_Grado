@@ -10,7 +10,7 @@ include('../../app/controllers/rol_usuarios/show_usuario.php');
     <br>
     <div class="container">
         <div class="col-md-13">
-          <div class="card card-outline card-danger" style="border-color:#D6B357;">
+          <div class="card card-outline card-danger" style="border-color:#D92B3A;">
             <div class="card-header">
               <h4><strong>ESTUDIANTE</strong></h4>
             </div>

@@ -30,27 +30,27 @@ include('../../../app/controllers/rol_asignaturas/show_asignatura.php');
                 <form action="<?=APP_URL;?>/app/controllers/rol_grupos/update_grupo.php" method="post">
                   <div class="form-row">
                       <div class="col-md-2">
-                        <input type="text" readonly name="txt_codigo" class="form-control" value="<?=$codigo_grupo;?>" placeholder="Codigo">
+                        <input type="text" readonly name="txt_codigo" class="form-control" value="<?=$codigo;?>" placeholder="Codigo">
                       </div>
                       <div class="col-md-8">
                         <input type="text" name="txt_nombre" class="form-control" value="<?=$nombre_grupo;?>" placeholder="Nombre Grupo">
                       </div> 
                       <div class="col-md-2">
-                        <input type="number" name="txt_ano" min="1900" max="2100" class="form-control" value="<?=$año_grupo;?>" placeholder="Año(YYYY)">
+                        <input type="text" name="txt_ano" class="form-control" value="<?=$ano_grupo;?>" placeholder="Año(YYYY)">
                       </div>                                          
                     </div>
                     <hr>
                     <div class="form-row">                    
                       <div class="col-md-4">
-                        <select name="txt_periodo" class="form-control">
-                          <option value="<?=$periodo_grupo;?>" disabled selected>Periodo <?=$periodo_grupo;?></option>
+                        <select name="txt_periodo" class="form-control" title="Seleccione el Periodo...">
+                          <option value="<?=$periodo_grupo;?>" selected>Periodo <?=$periodo_grupo;?></option>
                           <option value="1">Periodo 1</option>
                           <option value="2">Periodo 2</option>
                         </select>
                       </div>
                       <div class="col-md-8">
-                        <select name="txt_asignatura" class="form-control">
-                          <option value="<?=$asignatura_grupo;?>" disabled selected><?=$asignatura_grupo;?></option>
+                        <select name="txt_asignatura" class="form-control" title="Seleccione la asignatura...">
+                          <option value="<?=$asignatura_grupo;?>" selected><?=$asignatura_grupo;?></option>
                             <?php
                             foreach($asignaturas as $datos_asignatura){
                                 $codigo_asignatura = $datos_asignatura['idasignaturas'];
