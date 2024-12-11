@@ -51,8 +51,34 @@ include('../../../app/controllers/rol_asignaturas/show_asignatura.php');
                       <td style="text-align: center;"><?=$contador_asignatura;?></td>
                       <td style="text-align: center;"><?=$asignatura['idasignaturas'];?></td>
                       <td><?=$asignatura['nombre'];?></td>
-                      <td style="text-align: center;"><?=$asignatura['programa_idPrograma'];?></td>
-                      <td style="text-align: center;"><?=$asignatura['programa_Universidad_idUniversidad'];?></td>
+                      <td style="text-align: center;">
+                        <?php
+                            $uni = $asignatura['programa_idPrograma'];
+                            $sql_programas = "SELECT * FROM programa WHERE idPrograma = '$uni'";
+                            $query_programas = $pdo->prepare($sql_programas);
+                            $query_programas->execute();
+                            $datos_programas = $query_programas->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach($datos_programas as $datos_programa){
+                              $nom_pro = $datos_programa['nombre'];
+                              echo $nom_pro;
+                            }
+                        ?>
+                      </td>
+                      <td style="text-align: center;">
+                        <?php
+                            $uni = $asignatura['programa_Universidad_idUniversidad'];
+                            $sql_universidades = "SELECT * FROM universidad WHERE idUniversidad = '$uni'";
+                            $query_universidades = $pdo->prepare($sql_universidades);
+                            $query_universidades->execute();
+                            $datos_universidades = $query_universidades->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach($datos_universidades as $datos_universidad){
+                              $nom_uni = $datos_universidad['nombre'];
+                              echo $nom_uni;
+                            }
+                          ?>
+                      </td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_asignatura.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>

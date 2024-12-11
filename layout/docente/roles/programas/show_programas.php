@@ -45,9 +45,21 @@ include('../../../../app/controllers/rol_programas/show_programa.php');
                     <tr>
                       <td style="text-align: center;"><?=$contador_programa;?></td>
                       <td style="text-align: center;"><?=$programa['idPrograma'];?></td>
-                      <td style="text-align: center;"><?=$programa['nombre'];?></td>
-                      <td style="text-align: center;"><?=$programa['Universidad_idUniversidad'];?></td>
-                      
+                      <td><?=$programa['nombre'];?></td>
+                      <td style="text-align: center;">
+                        <?php
+                          $uni = $programa['Universidad_idUniversidad'];
+                          $sql_universidades = "SELECT * FROM universidad WHERE idUniversidad = '$uni'";
+                          $query_universidades = $pdo->prepare($sql_universidades);
+                          $query_universidades->execute();
+                          $datos_universidades = $query_universidades->fetchAll(PDO::FETCH_ASSOC);
+
+                          foreach($datos_universidades as $datos_universidad){
+                            $nom_uni = $datos_universidad['nombre'];
+                            echo $nom_uni;
+                          }
+                        ?>                      
+                      </td>
                     </tr>
   
                   <?php

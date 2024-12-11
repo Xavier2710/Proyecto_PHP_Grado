@@ -26,11 +26,13 @@ include('../../../../app/controllers/rol_asignaturas/show_asignatura.php');
               <div class="card-body">
               <table id="example1" class="table table-bordered table-hover table-sm"> <!--Para marcar una fila(table-striped) -->
                 
-                <thead>
+              <thead>
                   <tr style="text-align: center;">
                     <th>Item</th>
                     <th>Codigo</th>
                     <th>Nombre</th>
+                    <th>Programa</th>
+                    <th>Universidad</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -43,9 +45,36 @@ include('../../../../app/controllers/rol_asignaturas/show_asignatura.php');
                     <tr>
                       <td style="text-align: center;"><?=$contador_asignatura;?></td>
                       <td style="text-align: center;"><?=$asignatura['idasignaturas'];?></td>
-                      <td style="text-align: center;"><?=$asignatura['nombre'];?></td>                      
-                    </tr>
-  
+                      <td><?=$asignatura['nombre'];?></td>
+                      <td style="text-align: center;">
+                        <?php
+                            $uni = $asignatura['programa_idPrograma'];
+                            $sql_programas = "SELECT * FROM programa WHERE idPrograma = '$uni'";
+                            $query_programas = $pdo->prepare($sql_programas);
+                            $query_programas->execute();
+                            $datos_programas = $query_programas->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach($datos_programas as $datos_programa){
+                              $nom_pro = $datos_programa['nombre'];
+                              echo $nom_pro;
+                            }
+                        ?>
+                      </td>
+                      <td style="text-align: center;">
+                        <?php
+                            $uni = $asignatura['programa_Universidad_idUniversidad'];
+                            $sql_universidades = "SELECT * FROM universidad WHERE idUniversidad = '$uni'";
+                            $query_universidades = $pdo->prepare($sql_universidades);
+                            $query_universidades->execute();
+                            $datos_universidades = $query_universidades->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach($datos_universidades as $datos_universidad){
+                              $nom_uni = $datos_universidad['nombre'];
+                              echo $nom_uni;
+                            }
+                          ?>
+                      </td>
+                    </tr>  
                   <?php
                   }
                   ?>                

@@ -23,7 +23,7 @@ include('../../app/controllers/rol_asignaturas/show_asignatura.php');
               </div>
               <div class="card-body">
               
-                <form action="<?=APP_URL;?>/app/controllers/creaciones_literarias/create_literaria.php" method="post">
+                <form action="<?=APP_URL;?>/app/controllers/creaciones_literarias/create_literaria.php" method="post" enctype="multipart/form-data">
                   <div class="form-row">
                     <div class="col">
                       <input type="text" name="txt_codigo" class="form-control" placeholder="Codigo">
@@ -34,10 +34,10 @@ include('../../app/controllers/rol_asignaturas/show_asignatura.php');
                   </div>
                   <hr>
                   <div class="form-row">
-                    <div class="col-md-5">
+                    <div class="col-md-7">
                       <input type="file" id="file" accept=".pdf,.doc,.docx,.txt" name="txt_archivo" class="form-control" placeholder="Seleccione el archivo...">                  
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-4">
                       <output id="list">
                         <img id="preview" style="max-width: 100%; height: auto; border-radius: 15px; display: none;" alt="Vista previa">
                       </output>                    
@@ -45,23 +45,12 @@ include('../../app/controllers/rol_asignaturas/show_asignatura.php');
                   </div>
                   <hr>
                   <div class="form-row">
-                  <div class="col-md-4">
+                    <div class="col-md-7">
                       <select class="custom-select" name="txt_autor">
                         <option value="" disabled selected>Seleccione el Autor...</option>
                         <?php
                         foreach($usuarios as $usuario) {?>
-                          <option value="<?=$usuario['nombreCompleto'];?>"><?=$usuario['nombreCompleto'];?></option>
-                        <?php 
-                         }                        
-                        ?>                        
-                      </select>
-                    </div> 
-                    <div class="col-md-3">
-                      <select class="custom-select" name="txt_autor">
-                        <option value="" disabled selected>Seleccione Asignatura...</option>
-                        <?php
-                        foreach($asignaturas as $asignatura) {?>
-                          <option value="<?=$asignatura['idasignaturas'];?>"><?=$asignatura['idasignaturas'];?> - <?=$asignatura['nombre'];?></option>
+                          <option value="<?=$usuario['idusuario'];?>"><?=$usuario['nombreCompleto'];?></option>
                         <?php 
                          }                        
                         ?>                        

@@ -37,7 +37,7 @@ include('../../../app/controllers/rol_grupos/show_grupo.php');
                         </div>
                         <div class="col-md-5">
                         <select class="custom-select" name="txt_grupo">
-                                <option value="" disabled selected>Seleccione el grupo...</option>
+                        <option value="<?=$grupo_estudiante;?>" selected><?=$grupo_estudiante;?></option>
                                 <?php 
                                   foreach($grupos as $datos_grupo){
                                     $codigo_grupo = $datos_grupo['idgrupos'];

@@ -34,10 +34,10 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                   <tr style="text-align: center;">
                     <th>Item</th>
                     <th>Codigo</th>
-                    <th>Nombre</th>
+                    <th>Nombre Creación Literaria</th>
                     <th>Archivo</th>
                     <th>Autor</th>
-                    <th>Asignatura</th>
+                    <th>Fecha de Cargue</th>
                     <th>Acción</th>
                   </tr>
                 </thead>
@@ -51,11 +51,18 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                     <tr>
                       <td style="text-align: center;"><?=$contador_literaria;?></td>
                       <td style="text-align: center;"><?=$literaria['idliteraria'];?></td>
-                      <td><?=$literaria['nombre'];?></td>
-                      <td><?=$literaria['archivo'];?></td>
-                      <td><?=$literaria['autor'];?></td>
-                      <td><?=$literaria['fechaCargue'];?></td>
-                      <td><?=$literaria['asignaturas_idasignaturas'];?></td>
+                      <td style="text-align: center;"><?=$literaria['nombre'];?></td>
+                      <td style="text-align: center;"><?=$literaria['archivo'];?></td>
+                      <td style="text-align: center;">
+                        
+                      <?php 
+                      $codigo = $literaria['autor'];
+                      include ('../../app/controllers/rol_usuarios/datos_usuario.php');
+                      echo $nombre_usuario;                      
+                      ?>
+                    
+                      </td>
+                      <td style="text-align: center;"><?=$literaria['fechaCargue'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_asignatura.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>

@@ -52,7 +52,7 @@ include('../../../app/controllers/rol_usuarios/show_usuario_asignatura.php');
                     <tr>
                       <td style="text-align: center;"><?=$contador_grupo;?></td>
                       <td style="text-align: center;"><?=$grupo['idgrupos'];?></td>
-                      <td style="text-align: center;"><?=$grupo['nombregrupo'];?></td>
+                      <td><?=$grupo['nombregrupo'];?></td>
                       <td style="text-align: center;"><?=$grupo['periodo'];?></td>
                       <td style="text-align: center;"><?=$grupo['año'];?></td>
                       <td style="text-align: center;"><?=$grupo['nombre_asignatura'];?></td>

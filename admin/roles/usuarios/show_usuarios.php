@@ -49,12 +49,12 @@ include('../../../app/controllers/rol_usuarios/show_usuario.php');
                    $contador_usuario = $contador_usuario + 1;?>
                     
                     <tr>
-                      <td  style="text-align: center;"><?=$contador_usuario;?></td>
+                      <td style="text-align: center;"><?=$contador_usuario;?></td>
                       <td style="text-align: center;"><?=$usuario['idusuario'];?></td>
                       <td><?=$usuario['nombreCompleto'];?></td>
                       <td><?=$usuario['correo'];?></td>
                       <td><?= substr($usuario['clave'], 0, 2) . str_repeat('*', strlen($usuario['clave']) - 2); ?></td>
-                      <td><?=$usuario['rol'];?></td>
+                      <td style="text-align: center;"><?=$usuario['rol'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_usuario.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>

@@ -8,7 +8,7 @@ $txt_correo = $_POST['txt_correo'];
 $txt_clave = $_POST['txt_clave'];
 $txt_rol = $_POST['txt_rol'];
 
-// Validación de campos vacíos
+
 if (empty($txt_codigo) || empty($txt_nombre) || empty($txt_correo) || empty($txt_clave)) {
     session_start();
     $_SESSION['mensaje'] = "Debe diligenciar todos los campos";
@@ -20,7 +20,7 @@ if (empty($txt_codigo) || empty($txt_nombre) || empty($txt_correo) || empty($txt
 try {
     $pdo->beginTransaction();
 
-    // Inserción en la tabla usuarios
+    
     $sentencia = $pdo->prepare("
         INSERT INTO usuarios (idusuario, nombreCompleto, correo, clave, rol) 
         VALUES (:txt_codigo, :txt_nombre, :txt_correo, :txt_clave, :txt_rol)
@@ -35,20 +35,19 @@ try {
         throw new Exception("Error al insertar en la tabla usuarios");
     }
 
-    // Si el rol es "Estudiante", realiza el segundo insert
-    if ($txt_rol === 'Estudiante') {
+    
+    if ($txt_rol == 'Estudiante') {
         $last_id_usuario = $pdo->lastInsertId();
         $grupo = '40001';
         $asignatura = '20001';
 
         $sentencia_estudiante = $pdo->prepare("
-            INSERT INTO estudiante (codigo, usuarios_idusuario, grupos_idgrupos, grupos_asignaturas_idasignaturas) 
-            VALUES (:txt_codigo, :last_id_usuario, :txt_grupo, :txt_asignatura)
+            INSERT INTO estudiante (codigo, usuarios_idusuario, grupos_idgrupos) 
+            VALUES (:txt_codigo, :last_id_usuario, :txt_grupo)
         ");
         $sentencia_estudiante->bindParam(':txt_codigo', $txt_codigo);
         $sentencia_estudiante->bindParam(':last_id_usuario', $last_id_usuario);
         $sentencia_estudiante->bindParam(':txt_grupo', $grupo);
-        $sentencia_estudiante->bindParam(':txt_asignatura', $asignatura);
 
         if (!$sentencia_estudiante->execute()) {
             throw new Exception("Error al insertar en la tabla estudiante");
