@@ -2,6 +2,8 @@
 include('../app/config.php');
 include('../admin/layout/parte1_admin.php');
 include('../app/controllers/rol_usuarios/show_usuario.php');
+include('../app/controllers/creaciones_literarias/show_literaria.php');
+include('../app/controllers/cuestionarios/show_cuestionario.php');
 ?>
 
 
@@ -19,9 +21,14 @@ include('../app/controllers/rol_usuarios/show_usuario.php');
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-poll"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Encuestados</span>
-                <span class="info-box-number">10</span>
-                </span>
+                <span class="info-box-text">Encuestas</span>
+                <?php
+                $contador_cuestionario = 0;
+                foreach ($cuestionarios as $cuestionario) {
+                   $contador_cuestionario = $contador_cuestionario + 1;
+                 }
+                ?>
+                <span class="info-box-number"><?=$contador_cuestionario;?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -51,7 +58,13 @@ include('../app/controllers/rol_usuarios/show_usuario.php');
 
               <div class="info-box-content">
                 <span class="info-box-text">Creaciones Literarias</span>
-                <span class="info-box-number">0</span>
+                <?php
+                $contador_literaria = 0;
+                foreach ($literarias as $literaria) {
+                   $contador_literaria = $contador_literaria + 1;
+                 }
+                ?>
+                <span class="info-box-number"><?=$contador_literaria;?></span>
               </div>
               <!-- /.info-box-content -->
             </div>

@@ -45,14 +45,17 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                   <?php 
                   $contador_literaria = 0;
                   foreach($literarias as $literaria){
-                   $codigo = $literaria['idliteraria']; 
+                   $codigo_literaria = $literaria['idliteraria'];
+                   $codigo_autor = $literaria['autor'];
                    $contador_literaria = $contador_literaria + 1;?>
                     
                     <tr>
                       <td style="text-align: center;"><?=$contador_literaria;?></td>
                       <td style="text-align: center;"><?=$literaria['idliteraria'];?></td>
                       <td style="text-align: center;"><?=$literaria['nombre'];?></td>
-                      <td style="text-align: center;"><?=$literaria['archivo'];?></td>
+                      <td style="text-align: center;">
+                        <?=$literaria['archivo'];?>
+                      </td>
                       <td style="text-align: center;">
                         
                       <?php 
@@ -65,9 +68,11 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                       <td style="text-align: center;"><?=$literaria['fechaCargue'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <a href="edit_asignatura.php?id=<?=$codigo;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
+                          <a href="<?=APP_URL;?>/app/controllers/creaciones_literarias/download_literaria.php?id=<?=$codigo_literaria;?>" type="button" class="btn btn-primary" title="Descargar" style="background-color: #F2D98D; border-radius: 10px 6px 6px 0px; border-color: #F2D98D; color: red;"><i class="bi bi-download"></i></a>
+                          <a href="edit_literaria.php?id=<?=$codigo_literaria;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
                           <form action="<?=APP_URL;?>/app/controllers/creaciones_literarias/delete_literaria.php" onclick="preguntar<?=$codigo;?>(event)" method="post" id="miformulario<?=$codigo;?>">
-                            <input type="text" value="<?=$codigo;?>" hidden name="codigo_eliminar">
+                            <input type="text" value="<?=$codigo_literaria;?>" hidden name="codigo_eliminar">
+                            <input type="text" value="<?=$codigo_autor;?>" hidden name="codigo_autor">
                             <button type="submit" class="btn btn-danger btn-sm" title="Borrar" style="background-color: #D92B3A; border-color: #D92B3A; border-radius: 10px 5px 5px 0px; color: #F2F2F2;"><i class="bi bi-trash3"></i></button>
                           </form>  
                           <script>
@@ -120,8 +125,8 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
 <script>
   $(function () {
     $("#example1").DataTable({
-      "pageLength":4,
-      "language":{
+      "pageLength": 4,
+      "language": {
         "emptyTable": "No hay información",
         "info": "Mostrando _START_ a _END_ de _TOTAL_ Creaciones Literarias",
         "infoEmpty": "Mostrando 0 a 0 de 0 Creaciones Literarias",
@@ -134,20 +139,22 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
         "search": "Buscador:",
         "zeroRecords": "Sin resultados encontrados",
         "paginate": {
-            "first": "Primero",    
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior",            
-          } 
+          "first": "Primero",
+          "last": "Último",
+          "next": "Siguiente",
+          "previous": "Anterior"
+        }
       },
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": [{text:'Copiar',extend:'copy',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'}},
-                  {text:'Excel',extend:'excel',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
-                  {text:'PDF',extend:'pdf',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias',filename: 'Reporte de Creaciones Literarias'}, 
-                  {text:'Imprimir',extend:'print',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},title: 'Reporte de Creaciones Literarias'},
-                  {text:'Vista de Columnas',className: 'btn', attr:{style: 'background-color: #D92B3A;border-color:#F2F2F2;'},extend:'colvis'}           
-                ]
-                
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,      
+      "buttons": [
+        { text: 'Copiar', extend: 'copy', className: 'btn', attr: { style: 'background-color: #D92B3A;border-color:#F2F2F2;' } },
+        { text: 'Excel', extend: 'excel', className: 'btn', attr: { style: 'background-color: #D92B3A;border-color:#F2F2F2;' }, title: 'Reporte de Creaciones Literarias', filename: 'Reporte de Creaciones Literarias' },
+        { text: 'PDF', extend: 'pdf', className: 'btn', attr: { style: 'background-color: #D92B3A;border-color:#F2F2F2;' }, title: 'Reporte de Creaciones Literarias', filename: 'Reporte de Creaciones Literarias' },
+        { text: 'Imprimir', extend: 'print', className: 'btn', attr: { style: 'background-color: #D92B3A;border-color:#F2F2F2;' }, title: 'Reporte de Creaciones Literarias' },
+        { text: 'Vista de Columnas', className: 'btn', attr: { style: 'background-color: #D92B3A;border-color:#F2F2F2;' }, extend: 'colvis' }
+      ]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,

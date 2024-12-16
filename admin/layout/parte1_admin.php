@@ -96,7 +96,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         resetAutoLogout();
     });
 </script>
-
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -223,7 +222,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
 
           
-          <br>
           <li class="nav-item">
             <a href="<?=APP_URL;?>/admin/index_admin.php" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-house"></i></i>

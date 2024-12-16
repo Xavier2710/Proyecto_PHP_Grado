@@ -17,7 +17,7 @@ include('../../app/controllers/rol_asignaturas/show_asignatura.php');
         <div class="row">
 
           <div class="col-md-11" >
-            <div class="card card-outline card-danger" style="border-color: #D6B357;">
+            <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
                 <h3 class="card-title">Diligencie los datos de la creación literaria</h3>
               </div>

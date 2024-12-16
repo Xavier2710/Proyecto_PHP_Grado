@@ -2,6 +2,8 @@
 include('../../app/config.php');
 include('layout/parte1_admin.php');
 include('../../app/controllers/rol_usuarios/show_usuario.php');
+$codigo_au = $codigo_sesion;
+include('../../app/controllers/creaciones_literarias/datos_literaria_docente.php');
 ?>
 
 
@@ -32,7 +34,9 @@ include('../../app/controllers/rol_usuarios/show_usuario.php');
                           <div class="col-sm-12 border-right">
                             <div class="description-block">
                               <span class="description-text"><STROng>CREACIONES LITERARIAS CARGADAS</STROng></span>
-                              <h5 class="description-header">3</h5>
+                              <h5 class="description-header">
+                                <?php echo $contador_creaciones_literarias; ?>
+                              </h5>
                             </div>
                             <!-- /.description-block -->
                           </div>

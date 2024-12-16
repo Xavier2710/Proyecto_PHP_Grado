@@ -242,6 +242,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="<?=APP_URL;?>/layout/estudiante/creaciones_literarias/show_literarias.php" class="nav-link" style="color: #F2F2F2;">
+              <i class="nav-icon fas"><i class="bi bi-pencil-square"></i></i>
+              <p>
+                Creaciones Literarias
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item text-left user-panel mt-3 pb-3 mb-3 d-flex" style="border-color: #F2F2F2;">
           </li>
 

@@ -9,6 +9,7 @@ if (isset($_SESSION['sesion_correo'])) {
   $datos_sesion_usuarios = $query_sesion->fetchAll(PDO::FETCH_ASSOC);
   foreach ($datos_sesion_usuarios as $datos_sesion_usuario) {
     $nombre_sesion_usuario = $datos_sesion_usuario['nombreCompleto'];
+    $codigo_sesion = $datos_sesion_usuario['idusuario'];
   }
 }else{
   //echo 'El usuario no paso por el login';
