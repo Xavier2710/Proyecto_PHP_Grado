@@ -13,7 +13,7 @@ if(($txt_codigo == "") || ($txt_nombre == "")){
     session_start();
     $_SESSION['mensaje'] = "Debe diligenciar todos los campos";
     $_SESSION['icono'] = "info";
-    header('Location:'.APP_URL."/admin/cuestionario/create_cuestionario.php");
+    header('Location:'.APP_URL."/layout/docente/cuestionarios/create_cuestionario.php");
 }else{
 
     $sentencia = $pdo->prepare("INSERT INTO encuesta (idCuestionario, nombre, fechaInicio, fechaFin, idusuario) 
@@ -30,18 +30,18 @@ if(($txt_codigo == "") || ($txt_nombre == "")){
             session_start();
             $_SESSION['mensaje'] = "Cuestionario registrado con éxito";
             $_SESSION['icono'] = "success";
-            header('Location:'.APP_URL."/admin/cuestionarios/show_cuestionarios.php");
+            header('Location:'.APP_URL."/layout/docente/cuestionarios/show_cuestionarios.php");
         }else{
             session_start();
             $_SESSION['mensaje'] = "No se pudo registrar la creación literaria, codigo existe!";
             $_SESSION['icono'] = "error";
-            header('Location:'.APP_URL."/admin/cuestionarios/create_cuestionario.php");
+            header('Location:'.APP_URL."/layout/docente/cuestionarios/create_cuestionario.php");
         }
     }catch (Exception $exception){
         session_start();
         $_SESSION['mensaje'] = "Este Codigo ya esta registrado en el sistema";
         $_SESSION['icono'] = "error";
-        header('Location:'.APP_URL."/admin/cuestionarios/create_cuestionario.php");
+        header('Location:'.APP_URL."/layout/docente/cuestionarios/create_cuestionario.php");
     }
 }
 ?>

@@ -21,7 +21,7 @@ include('../app/controllers/cuestionarios/show_cuestionario.php');
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-poll"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Encuestas</span>
+                <span class="info-box-text">Cuestionarios</span>
                 <?php
                 $contador_cuestionario = 0;
                 foreach ($cuestionarios as $cuestionario) {

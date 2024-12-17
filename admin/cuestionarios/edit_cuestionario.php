@@ -1,6 +1,10 @@
 <?php 
 include('../../app/config.php');
 include('../../admin/layout/parte1_admin.php');
+
+$codigo_encu = $_GET['id'];
+
+include('../../app/controllers/cuestionarios/datos_cuestionario.php');
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -20,31 +24,30 @@ include('../../admin/layout/parte1_admin.php');
               </div>
               <div class="card-body">
               
-                <form action="<?=APP_URL;?>/app/controllers/cuestionarios/create_cuestionario.php" method="post">
+                <form action="<?=APP_URL;?>/app/controllers/cuestionarios/update_cuestionario.php" method="post">
                   <div class="form-row">
                     <div class="col-md-3">
-                      <input type="text" name="txt_codigo" class="form-control" placeholder="Codigo" required>
-                      <input type="text" name="codigo_sesion" class="form-control" value="<?=$codigo_sesion;?>" hidden>
+                      <input type="text" name="txt_codigo" class="form-control" readonly value="<?=$codigo_cuestionario;?>" placeholder="Codigo">
                     </div>
                     <div class="col-md-8">
-                      <input type="text" name="txt_nombre" class="form-control" placeholder="Nombre Cuestionario" required>
+                      <input type="text" name="txt_nombre" class="form-control" value="<?=$nombre_cuestionario;?>" placeholder="Nombre Cuestionario" required>
                     </div>                                          
                   </div>
                   <hr>
                   <div class="form-row">
                     <div class="col-md-4">
                       <label for="">Fecha de Inicio</label>
-                      <input type="datetime-local" name="txt_fechainicio" class="form-control" placeholder="Nombre Creación Literaria" required> 
+                      <input type="datetime-local" name="txt_fechainicio" class="form-control" value="<?=$fechainicio_cuestionario;?>" placeholder="Nombre Creación Literaria" required> 
                     </div> 
                     <div class="col-md-3">
                       <label for="">Fecha Fin</label>
-                      <input type="datetime-local" name="txt_fechafin" class="form-control" placeholder="Nombre Creación Literaria" required>                        
+                      <input type="datetime-local" name="txt_fechafin" class="form-control" value="<?=$fechafin_cuestionario;?>" placeholder="Nombre Creación Literaria" required>                        
                     </div>
                   </div>
                   <hr>
                   <div class="form-row">
                       <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary" style="background-color: #D6B357; border-color: #D6B357; color: #F2F2F2;">Registrar</button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #D6B357; border-color: #D6B357; color: #F2F2F2;">Actualizar</button>
                         <a href="show_cuestionarios.php" class="btn btn-danger" style="color: #F2F2F2;">Cancelar</a>
                       </div>
                   </div>                   

@@ -283,7 +283,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <li class="nav-item">
-            <a href="#" class="nav-link" style="color: #F2F2F2;">
+            <a href="<?=APP_URL;?>/layout/docente/cuestionarios/show_cuestionarios.php" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-pencil-square"></i></i>
               <p>
                 Cuestionario

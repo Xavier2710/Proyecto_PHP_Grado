@@ -4,6 +4,7 @@ include('layout/parte1_admin.php');
 include('../../app/controllers/rol_usuarios/show_usuario.php');
 $codigo_au = $codigo_sesion;
 include('../../app/controllers/creaciones_literarias/datos_literaria_docente.php');
+include('../../app/controllers/cuestionarios/datos_cuestionario_docente.php');
 ?>
 
 
@@ -31,15 +32,22 @@ include('../../app/controllers/creaciones_literarias/datos_literaria_docente.php
                       </div>
                       <div class="card-footer">
                         <div class="row">
-                          <div class="col-sm-12 border-right">
+                          <div class="col-sm-6 border-right border-left">
                             <div class="description-block">
-                              <span class="description-text"><STROng>CREACIONES LITERARIAS CARGADAS</STROng></span>
-                              <h5 class="description-header">
-                                <?php echo $contador_creaciones_literarias; ?>
-                              </h5>
+                              <h5 class="description-header">CUESTIONARIOS REGISTRADOS</h5>
+                              <span class="description-text">
+                                <?php echo $contador_cuestionarios; ?>
+                              </span>
                             </div>
-                            <!-- /.description-block -->
                           </div>
+                          <div class="col-sm-6 border-right border-left">
+                            <div class="description-block">
+                              <h5 class="description-header">CREACIONES LITERARIAS CARGADAS</h5>
+                              <span class="description-text">
+                                <?php echo $contador_creaciones_literarias; ?>
+                              </span>
+                            </div>
+                          </div>                          
                           <!-- /.col -->
                           <!-- /.col -->
                         </div>

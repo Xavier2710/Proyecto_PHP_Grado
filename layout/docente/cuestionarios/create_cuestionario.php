@@ -1,6 +1,6 @@
 <?php 
-include('../../app/config.php');
-include('../../admin/layout/parte1_admin.php');
+include('../../../app/config.php');
+include('../layout/parte1_admin.php');
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -20,7 +20,7 @@ include('../../admin/layout/parte1_admin.php');
               </div>
               <div class="card-body">
               
-                <form action="<?=APP_URL;?>/app/controllers/cuestionarios/create_cuestionario.php" method="post">
+                <form action="<?=APP_URL;?>/app/controllers/cuestionarios/create_cuestionario_docente.php" method="post">
                   <div class="form-row">
                     <div class="col-md-3">
                       <input type="text" name="txt_codigo" class="form-control" placeholder="Codigo" required>
@@ -64,8 +64,8 @@ include('../../admin/layout/parte1_admin.php');
   <!-- /.content-wrapper -->
 
   <?php 
-  include('../../admin/layout/parte2_admin.php');
-  include('../../layout/mensajes.php');
+  include('../layout/parte2_admin.php');
+  include('../../mensajes.php');
   ?>
 
 <script>

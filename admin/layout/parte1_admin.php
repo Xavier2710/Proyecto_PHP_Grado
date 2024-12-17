@@ -96,6 +96,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         resetAutoLogout();
     });
 </script>
+
+    <style>
+        .pregunta-card {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -180,7 +191,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #D5B256;">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #D6B357;">
     <!-- Brand Logo -->
     <a href="<?=APP_URL;?>/admin/index_admin.php" class="brand-link">
       <img src="<?=APP_URL;?>/public/dist/img/medicina2.png" alt="Logo_Medicina" class="brand-image elevation-3" style="opacity: .9; border-radius:5px">
@@ -281,7 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <li class="nav-item">
-            <a href="<?=APP_URL;?>/admin/cuestionarios/show_cuestionario.php" class="nav-link" style="color: #F2F2F2;">
+            <a href="<?=APP_URL;?>/admin/cuestionarios/show_cuestionarios.php" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-pencil-square"></i></i>
               <p>
                 Cuestionarios
