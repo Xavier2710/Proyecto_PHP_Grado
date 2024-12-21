@@ -1,6 +1,6 @@
 <?php
 
-$sql_preguntas = "SELECT * FROM preguntas WHERE idPreguntas = '$codigo_pregunta'";
+$sql_preguntas = "SELECT * FROM preguntas WHERE encuesta_idCuestionario = '$codigo_pregunta'";
 $query_preguntas = $pdo->prepare($sql_preguntas);
 $query_preguntas->execute();
 $datos_preguntas = $query_preguntas->fetchAll(PDO::FETCH_ASSOC);

@@ -66,7 +66,7 @@ include('../../../app/controllers/creaciones_literarias/show_literaria_docente.p
                       <td style="text-align: center;"><?=$literaria['fechaCargue'];?></td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <a href="<?=APP_URL;?>/app/controllers/creaciones_literarias/download_literaria.php?id=<?=$codigo_literaria;?>" type="button" class="btn btn-primary" title="Descargar" style="background-color: #F2D98D; border-radius: 10px 6px 6px 0px; border-color: #F2D98D; color: red;"><i class="bi bi-download"></i></a>
+                          <a href="<?=APP_URL;?>/app/controllers/creaciones_literarias/download_literaria_do_ad.php?id=<?=$codigo_literaria;?>" type="button" class="btn btn-primary" title="Descargar" style="background-color: #F2D98D; border-radius: 10px 6px 6px 0px; border-color: #F2D98D; color: red;"><i class="bi bi-download"></i></a>
                           <a href="edit_literaria.php?id=<?=$codigo_literaria;?>" type="button" class="btn btn-primary" title="Editar" style="background-color: #D6B357; border-radius: 10px 6px 6px 0px; border-color: #D6B357; color: #F2F2F2;"><i class="bi bi-pencil"></i></a>
                           <form action="<?=APP_URL;?>/app/controllers/creaciones_literarias/delete_literaria_docente.php" onclick="preguntar<?=$codigo;?>(event)" method="post" id="miformulario<?=$codigo;?>">
                             <input type="text" value="<?=$codigo_literaria;?>" hidden name="codigo_eliminar">

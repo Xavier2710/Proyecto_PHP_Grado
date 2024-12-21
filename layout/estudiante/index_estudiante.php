@@ -29,7 +29,7 @@ include('../../app/controllers/rol_usuarios/show_usuario.php');
                       </div>
                       <div class="card-footer">
                         <div class="row">
-                          <div class="col-sm-12 border-right">
+                          <div class="col-sm-12 border-right border-left">
                             <div class="description-block">
                               <span class="description-text"><STROng>ENCUESTAS REALIZADAS</STROng></span>
                               <h5 class="description-header">2</h5>

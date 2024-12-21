@@ -67,30 +67,33 @@ foreach ($usuarios_estudiante as $usuario_estudiante) {
               
                 <form action="<?=APP_URL;?>/app/controllers/rol_usuarios/update_usuario_estudiante.php" method="post">
                     <div class="form-row">
-                        <div>
-                          <label for="" style="text-align:center">Codigo: </label>
-                        </div>
                         <div class="col-md-1">
-                        <input type="text" readonly name="txt_codigo" class="form-control" value="<?=$codigo_estudiante;?>" placeholder="Codigo">
+                          <label for="">Codigo</label>
+                          <input type="text" readonly name="txt_codigo" class="form-control" value="<?=$codigo_estudiante;?>" placeholder="Codigo">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="txt_nombre" class="form-control" title="Nombre Completo" value="<?=$nombre_estudiante;?>" placeholder="Nombre Completo">
+                          <label for="">Nombre Completo</label>
+                          <input type="text" name="txt_nombre" class="form-control" title="Nombre Completo" value="<?=$nombre_estudiante;?>" placeholder="Nombre Completo">
                         </div>
                         <div class="col-md-4">
-                            <input type="email" name="txt_email" class="form-control" title="Correo Eléctronico" value="<?=$correo_estudiante;?>" placeholder="Correo">
+                          <label for="">Correo Personal</label>
+                          <input type="email" name="txt_email" class="form-control" title="Correo Eléctronico" value="<?=$correo_estudiante;?>" placeholder="Correo">
                         </div>
                     </div>
                     <hr>
                     <div class="form-row">
                         <div class="col-md-3">
-                            <select class="custom-select" name="txt_rol" title="Rol">
-                                <option value="<?=$rol_estudiante;?>" disabled selected><?=$rol_estudiante;?></option>
-                            </select>
+                          <label for="">Rol</label>
+                          <select class="custom-select" name="txt_rol" title="Rol">
+                            <option value="<?=$rol_estudiante;?>" disabled selected><?=$rol_estudiante;?></option>
+                          </select>
                         </div>                       
                         <div class="col-md-4">
-                        <input type="date" name="txt_fecha" class="form-control" title="Fecha de Nacimiento" value="<?=$fecha_estudiante;?>" placeholder="Fecha de Nacimiento">
+                          <label for="">Fecha de Nacimiento</label>
+                          <input type="date" name="txt_fecha" class="form-control" title="Fecha de Nacimiento" value="<?=$fecha_estudiante;?>" placeholder="Fecha de Nacimiento">
                         </div>
                         <div class="col-md-5">
+                          <label for="">Procedencia Escolar</label>
                           <select class="custom-select" name="txt_escolar" title="Procedencia Escolar">
                             <option value="<?=$escolar_estudiante;?>" selected><?=$escolar_estudiante;?></option>
                             <option value="Privado">Privado</option>
@@ -101,12 +104,15 @@ foreach ($usuarios_estudiante as $usuario_estudiante) {
                     <hr>
                     <div class="form-row">                        
                         <div class="col-md-2">
+                          <label for="">Genero</label>
                           <input type="text" name="txt_genero" class="form-control" value="<?=$genero_estudiante;?>" title="Genero" style="text-align: center;" placeholder="Genero">
                         </div>
                         <div class="col-md-3">
+                          <label for="">Promedio Ponderado</label>
                           <input type="text" name="txt_promedio" class="form-control" value="<?=$promedio_estudiante;?>" title="Promedio Ponderado" style="text-align: center;" placeholder="Promedio Ponderado">
                         </div>
                         <div class="col-md-3">
+                          <label for="">Materias Validadas</label>
                           <input type="text" name="txt_repeticion" class="form-control" value="<?=$repeticion_estudiante;?>" title="# Materias Validadas" style="text-align: center;" placeholder="# Materias Validadas">
                         </div>
                     </div>

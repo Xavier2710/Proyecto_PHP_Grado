@@ -11,6 +11,7 @@ if (isset($_SESSION['sesion_correo'])) {
     $nombre_sesion_usuario = $datos_sesion_usuario['nombreCompleto'];
     $rol_usuario = $datos_sesion_usuario['rol'];
     $id_usuario = $datos_sesion_usuario['idusuario'];
+    $codigo_sesion = $datos_sesion_usuario['idusuario'];
   }
 }else{
   
@@ -235,10 +236,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>       
 
           <li class="nav-item">
-            <a href="#" class="nav-link" style="color: #F2F2F2;">
+            <a href="<?=APP_URL;?>/layout/estudiante/cuestionarios/show_cuestionarios.php" class="nav-link" style="color: #F2F2F2;">
               <i class="nav-icon fas"><i class="bi bi-pencil-square"></i></i>
               <p>
-                Cuestionario
+                Cuestionarios
               </p>
             </a>
           </li>

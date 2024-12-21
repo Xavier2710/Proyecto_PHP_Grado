@@ -17,7 +17,7 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
         <br>        
         <div class="row">
 
-          <div class="col-md-11">
+          <div class="col-md-12">
             <div class="card card-outline card-danger" style="border-color: #D92B3A;">
               <div class="card-header">
                 <h3 class="card-title">Cuestionarios Registrados</h3>
@@ -38,6 +38,7 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                     <th>Nombre</th>
                     <th>Fecha de Inicio</th>
                     <th>Fecha Fin</th>
+                    <th>Asignar Cuestionario</th>
                     <th>Acción</th>
                   </tr>
                 </thead>
@@ -54,6 +55,11 @@ include('../../app/controllers/creaciones_literarias/show_literaria.php');
                       <td><?=$cuestionario['nombre'];?></td>
                       <td style="text-align: center;"><?=$cuestionario['fechaInicio'];?></td>
                       <td style="text-align: center;"><?=$cuestionario['fechaFin'];?></td>
+                      <td style="text-align: center; ">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                          <a href="asign_cuestionario.php?id=<?=$codigo_cu;?>" type="button" class="btn btn-primary" title="Asignar cuestionario a un grupo" style="background-color: #F2D98D; border-radius: 10px 6px 6px 0px; border-color: #F2D98D; color: white;"><i class="bi bi-send-plus"></i></a>
+                        </div>
+                      </td>
                       <td style="text-align: center; ">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="edit_cuestionario.php?id=<?=$codigo_cu;?>" type="button" class="btn btn-primary" title="Editar Cuestionario" style="background-color: #F2D98D; border-radius: 10px 6px 6px 0px; border-color: #F2D98D; color: white;"><i class="bi bi-pencil"></i></a>

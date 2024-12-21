@@ -33,7 +33,7 @@ if(($txt_codigo == "") || ($txt_nombre == "")){
             header('Location:'.APP_URL."/admin/cuestionarios/show_cuestionarios.php");
         }else{
             session_start();
-            $_SESSION['mensaje'] = "No se pudo registrar la creación literaria, codigo existe!";
+            $_SESSION['mensaje'] = "No se pudo registrar el cuestionario, codigo existe!";
             $_SESSION['icono'] = "error";
             header('Location:'.APP_URL."/admin/cuestionarios/create_cuestionario.php");
         }
